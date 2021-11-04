@@ -1,0 +1,81 @@
+//for Home pages
+@import "./../css/variable";
+@import "./../css/mixin";
+
+:root {
+  --leftPopular: 0px;
+  --widthPopular: 0px;
+  --leftTopRated: 0px;
+  --widthTopRated: 0px;
+  --leftTrending: 0px;
+  --widthTrending: 0px;
+  --leftTrailer: 0px;
+  --widthTrailer: 0px;
+  --transition: 0s;
+  --border: 1px solid;
+}
+//ul,li
+ul.ul_home {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 90%;
+    background-color: #142851;
+    transition: var(--transition);
+    border-radius: 30px;
+  }
+  li {
+    height: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
+    span {
+      pointer-events: none;
+      font-weight: 600;
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+  }
+  li.s1 {
+    border: var(--border);
+    border-right: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  li.s2 {
+    border: var(--border);
+    border-left: 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  li.on {
+    span {
+      background-clip: text;
+      background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+#popular .ul_home {
+  &::before {
+    width: var(--widthPopular);
+    left: var(--leftPopular);
+  }
+}
+#top_rated .ul_home {
+  &::before {
+    width: var(--widthTopRated);
+    left: var(--leftTopRated);
+  }
+}
+#trending .ul_home {
+  &::before {
+    width: var(--widthTrending);
+    left: var(--leftTrending);
+  }
+}

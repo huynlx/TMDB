@@ -1,0 +1,9 @@
+export { default as no_image } from "./no_image.png";
+export { default as no_poster } from "./no_poster.svg";
+export { default as no_user } from "./no_user.svg";
+export { default as trending } from "./trending.svg";
+export { default as loading } from "./loading.gif";
+export { default as loader3 } from "./Loader3.gif";
+export { default as tenor } from "./tenor.gif";
+export { default as temor } from "./temor.gif";
+export { default as loadingBuffering } from "./loading-buffering.gif";

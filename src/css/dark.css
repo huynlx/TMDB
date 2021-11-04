@@ -1,0 +1,19 @@
+html[data-theme="dark"] {
+  --color: #fff;
+  --background-color: #202020;
+  --textColor: #fff;
+  --textColor2: #ddd;
+  --rootColor: #313131;
+  --aColor: white;
+  --scrollBar: #202020;
+  --keywordColor: #111111;
+  --theme: dark;
+  --border: 1px solid gray;
+  --table: #111111;
+  --tableBorder: none;
+  --listBorder: 1px solid rgb(49, 49, 49);
+  --span: white;
+  --as: gray;
+  --img: #111111;
+  --loadSlider: #313131;
+}

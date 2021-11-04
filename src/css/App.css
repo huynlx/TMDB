@@ -1,0 +1,101 @@
+@import "../assets/vendor/css/normalize.css";
+@import "../assets/vendor/css/bootstrap.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "./_font.css";
+@import "../assets/vendor/css/animate.min.css";
+@import "./dark.css";
+@import "./light.css";
+
+:root {
+  --font: "Source Sans Pro", sans-serif;
+  --scrollBar: white;
+  --opacityTrailer: 1;
+  --lighterGreen: 192, 254, 207;
+  --lightGreen: 30, 213, 169;
+  --darkBlue: 3, 37, 65;
+  --lightBlue: 1, 180, 228;
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+html,
+body {
+  background-color: var(--background-color);
+  color: var(--color);
+  transition: background-color 500ms ease, color 500ms ease;
+  overflow-y: scroll;
+  margin: 0;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: var(--aColor);
+}
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
+.container {
+  max-width: 1300px;
+}
+.choose.container {
+  margin-top: 30px !important;
+}
+/* popover */
+.bs-popover-auto[x-placement^="top"] > .arrow::after,
+.bs-popover-top > .arrow::after {
+  bottom: 2px;
+  border-width: 0.5rem 0.5rem 0;
+  border-top-color: #032541;
+}
+.bs-popover-auto[x-placement^="top"],
+.bs-popover-top {
+  max-width: 536px;
+  max-height: 200px;
+  background-color: #032541;
+}
+@media screen and (max-width: 576px) {
+  .bs-popover-auto[x-placement^="top"],
+  .bs-popover-top {
+    max-width: 97.45%;
+  }
+}
+/* !popover */
+.medium-zoom-overlay {
+  z-index: 999;
+}
+*:focus {
+  outline: none !important;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background: var(--scrollBar);
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+/* Scrollbar Swiper */
+.swiper-container-horizontal > .swiper-scrollbar {
+  height: 8px !important;
+  left: 0% !important;
+  background: transparent;
+}
+.swiper-scrollbar-drag {
+  background: #e0e0e0 !important;
+}
+
+.popover-body {
+  padding: 0.5rem 0rem;
+}

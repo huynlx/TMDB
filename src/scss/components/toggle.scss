@@ -1,0 +1,47 @@
+$scale: 80px;
+$time: 0.5s;
+@mixin common($a, $b, $c, $d, $e, $f, $g) {
+  display: $a;
+  flex-direction: $b;
+  justify-content: $c;
+  align-items: $d;
+  width: $e;
+  height: $f;
+  background-color: $g;
+  transition: all $time ease;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.toggle {
+  transform: scale(0.7);
+  display: flex;
+  flex-direction: column;
+  input[type="checkbox"] {
+    display: none;
+  }
+  .btn {
+    align-self: center;
+    .box {
+      @include common(flex, column, center, null, $scale, $scale/2, black);
+      position: relative;
+      border-radius: $scale/4;
+      cursor: pointer;
+      .ball {
+        @include common(null, null, null, null, $scale/2, $scale/2, grey);
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid;
+      }
+      .scenary {
+        @include common(flex, row, space-between, null, null, null, null);
+        padding: 5px 10px 5px 10px;
+        svg {
+          width: $scale/3;
+        }
+      }
+    }
+  }
+}

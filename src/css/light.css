@@ -1,0 +1,19 @@
+html[data-theme="light"] {
+  --color: #000;
+  --background-color: #fff;
+  --textColor: #000;
+  --textColor2: rgba(0, 0, 0, 0.6);
+  --rootColor: white;
+  --aColor: black;
+  --scrollBar: white;
+  --keywordColor: rgba(0, 0, 0, 0.1);
+  --theme: light;
+  --border: 1px solid;
+  --table: white;
+  --tableBorder: 1px solid rgba(227, 227, 227, 1);
+  --listBorder: 1px solid rgba(227, 227, 227, 1);
+  --span: rgba(0, 0, 0, 0.8);
+  --as: rgba(0, 0, 0, 0.5);
+  --img: #dbdbdb;
+  --loadSlider: #e0e0e0;
+}

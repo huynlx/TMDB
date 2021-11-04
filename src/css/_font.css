@@ -1,0 +1,472 @@
+/* source-sans-pro-200 - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 200;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-200.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-200.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-200italic - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 200;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-200italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-200italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-300 - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-300.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-300.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-300italic - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 300;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-300italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-300italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-regular - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-regular.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-regular.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-italic - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-600 - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-600.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-600.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-600italic - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-600italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-600italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-700 - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-700.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-700.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-700italic - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-700italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-700italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-900 - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-900.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-900.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-900italic - vietnamese_latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""),
+    url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-900italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/source-sans-pro-v14-vietnamese_latin-900italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* khó vcl cái phần trăm doughnut này */
+@font-face {
+  font-family: "Consensus";
+  src: url("../assets/fonts/consensus/Consensus.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "Consensus" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-r0:before {
+  padding-left: 4px;
+  content: "\e900";
+}
+.icon-r1:before {
+  content: "\e901";
+}
+.icon-r2:before {
+  content: "\e902";
+}
+.icon-r3:before {
+  content: "\e903";
+}
+.icon-r4:before {
+  content: "\e904";
+}
+.icon-r5:before {
+  content: "\e905";
+}
+.icon-r6:before {
+  content: "\e906";
+}
+.icon-r7:before {
+  content: "\e907";
+}
+.icon-r8:before {
+  content: "\e908";
+}
+.icon-r9:before {
+  content: "\e909";
+}
+.icon-r10:before {
+  content: "\e90a";
+}
+.icon-r11:before {
+  content: "\e90b";
+}
+.icon-r12:before {
+  content: "\e90c";
+}
+.icon-r13:before {
+  content: "\e90d";
+}
+.icon-r14:before {
+  content: "\e90e";
+}
+.icon-r15:before {
+  content: "\e90f";
+}
+.icon-r16:before {
+  content: "\e910";
+}
+.icon-r17:before {
+  content: "\e911";
+}
+.icon-r18:before {
+  content: "\e912";
+}
+.icon-r19:before {
+  content: "\e913";
+}
+.icon-r20:before {
+  content: "\e914";
+}
+.icon-r21:before {
+  content: "\e915";
+}
+.icon-r22:before {
+  content: "\e916";
+}
+.icon-r23:before {
+  content: "\e917";
+}
+.icon-r24:before {
+  content: "\e918";
+}
+.icon-r25:before {
+  content: "\e919";
+}
+.icon-r26:before {
+  content: "\e91a";
+}
+.icon-r27:before {
+  content: "\e91b";
+}
+.icon-r28:before {
+  content: "\e91c";
+}
+.icon-r29:before {
+  content: "\e91d";
+}
+.icon-r30:before {
+  content: "\e91e";
+}
+.icon-r31:before {
+  content: "\e91f";
+}
+.icon-r32:before {
+  content: "\e920";
+}
+.icon-r33:before {
+  content: "\e921";
+}
+.icon-r34:before {
+  content: "\e922";
+}
+.icon-r35:before {
+  content: "\e923";
+}
+.icon-r36:before {
+  content: "\e924";
+}
+.icon-r37:before {
+  content: "\e925";
+}
+.icon-r38:before {
+  content: "\e926";
+}
+.icon-r39:before {
+  content: "\e927";
+}
+.icon-r40:before {
+  content: "\e928";
+}
+.icon-r41:before {
+  content: "\e929";
+}
+.icon-r42:before {
+  content: "\e92a";
+}
+.icon-r43:before {
+  content: "\e92b";
+}
+.icon-r44:before {
+  content: "\e92c";
+}
+.icon-r45:before {
+  content: "\e92d";
+}
+.icon-r46:before {
+  content: "\e92e";
+}
+.icon-r47:before {
+  content: "\e92f";
+}
+.icon-r48:before {
+  content: "\e930";
+}
+.icon-r49:before {
+  content: "\e931";
+}
+.icon-r50:before {
+  content: "\e932";
+}
+.icon-r51:before {
+  content: "\e933";
+}
+.icon-r52:before {
+  content: "\e934";
+}
+.icon-r53:before {
+  content: "\e935";
+}
+.icon-r54:before {
+  content: "\e936";
+}
+.icon-r55:before {
+  content: "\e937";
+}
+.icon-r56:before {
+  content: "\e938";
+}
+.icon-r57:before {
+  content: "\e939";
+}
+.icon-r58:before {
+  content: "\e93a";
+}
+.icon-r59:before {
+  content: "\e93b";
+}
+.icon-r60:before {
+  content: "\e93c";
+}
+.icon-r61:before {
+  content: "\e93d";
+}
+.icon-r62:before {
+  content: "\e93e";
+}
+.icon-r63:before {
+  content: "\e93f";
+}
+.icon-r64:before {
+  content: "\e940";
+}
+.icon-r65:before {
+  content: "\e941";
+}
+.icon-r66:before {
+  content: "\e942";
+}
+.icon-r67:before {
+  content: "\e943";
+}
+.icon-r68:before {
+  content: "\e944";
+}
+.icon-r69:before {
+  content: "\e945";
+}
+.icon-r70:before {
+  content: "\e946";
+}
+.icon-r71:before {
+  content: "\e947";
+}
+.icon-r72:before {
+  content: "\e948";
+}
+.icon-r73:before {
+  content: "\e949";
+}
+.icon-r74:before {
+  content: "\e94a";
+}
+.icon-r75:before {
+  content: "\e94b";
+}
+.icon-r76:before {
+  content: "\e94c";
+}
+.icon-r77:before {
+  content: "\e94d";
+}
+.icon-r78:before {
+  content: "\e94e";
+}
+.icon-r79:before {
+  content: "\e94f";
+}
+.icon-r80:before {
+  content: "\e950";
+}
+.icon-r81:before {
+  content: "\e951";
+}
+.icon-r82:before {
+  content: "\e952";
+}
+.icon-r83:before {
+  content: "\e953";
+}
+.icon-r84:before {
+  content: "\e954";
+}
+.icon-r85:before {
+  content: "\e955";
+}
+.icon-r86:before {
+  content: "\e956";
+}
+.icon-r87:before {
+  content: "\e957";
+}
+.icon-r88:before {
+  content: "\e958";
+}
+.icon-r89:before {
+  content: "\e959";
+}
+.icon-r90:before {
+  content: "\e95a";
+}
+.icon-r91:before {
+  content: "\e95b";
+}
+.icon-r92:before {
+  content: "\e95c";
+}
+.icon-r93:before {
+  content: "\e95d";
+}
+.icon-r94:before {
+  content: "\e95e";
+}
+.icon-r95:before {
+  content: "\e95f";
+}
+.icon-r96:before {
+  content: "\e960";
+}
+.icon-r97:before {
+  content: "\e961";
+}
+.icon-r98:before {
+  content: "\e962";
+}
+.icon-r99:before {
+  content: "\e963";
+}
+.icon-r100:before {
+  content: "\e964";
+}
+.icon-rNR:before {
+  content: "\e965";
+}
