@@ -1,0 +1,1 @@
+//!!=> chuyển đổi đối tượng thành boolean(0,null,undefined,false=>false,còn lại=>true)
