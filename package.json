@@ -13,11 +13,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "fast-average-color": "^6.3.0",
-<<<<<<< HEAD
     "firebase": "^7.14.5",
-=======
-    "firebase": "^9.4.0",
->>>>>>> 50fd31ee425fa9936e35ff9492b40afaa3e2d125
     "luxon": "^2.1.1",
     "medium-zoom": "^1.0.6",
     "moment": "^2.29.1",
@@ -26,11 +22,7 @@
     "react-bootstrap": "^1.4.3",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "^17.0.1",
-<<<<<<< HEAD
     "react-hook-form": "^6.11.3",
-=======
-    "react-hook-form": "^7.19.1",
->>>>>>> 50fd31ee425fa9936e35ff9492b40afaa3e2d125
     "react-modal-video": "^1.2.6",
     "react-read-more-read-less": "^1.0.7",
     "react-redux": "^7.2.2",
@@ -39,11 +31,7 @@
     "react-scripts": "4.0.1",
     "react-toastify": "^8.1.0",
     "redux": "^4.0.5",
-<<<<<<< HEAD
     "redux-thunk": "^2.3.0",
-=======
-    "redux-thunk": "^2.4.0",
->>>>>>> 50fd31ee425fa9936e35ff9492b40afaa3e2d125
     "styled-components": "^5.2.1",
     "swiper": "^6.4.5",
     "web-vitals": "^1.1.0",
