@@ -10,8 +10,6 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "fast-average-color": "^6.3.0",
     "firebase": "^7.14.5",
     "luxon": "^2.1.1",
