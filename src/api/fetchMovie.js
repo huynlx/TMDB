@@ -80,21 +80,21 @@ export const fetchMovie = async (id) => {
     videos:
       data.videos.results.length !== 0
         ? data.videos.results.map((item, key) => ({
-          ...item,
-          url: VIDEO_URL + item.key,
-        }))
+            ...item,
+            url: VIDEO_URL + item.key,
+          }))
         : // url: VIDEO_URL + data.videos.results[0].key
-        [],
+          [],
     recommendations: data.recommendations.results
       ? data.recommendations.results.slice(0, 8).map((value, key) => ({
-        ...value,
-        backdrop_path: value.backdrop_path
-          ? IMAGE_URL + BACKDROP_SIZE + value.backdrop_path
-          : no_image,
-        poster_path: value.poster_path
-          ? IMAGE_URL + POSTER_SIZE + value.poster_path
-          : no_poster,
-      }))
+          ...value,
+          backdrop_path: value.backdrop_path
+            ? IMAGE_URL + BACKDROP_SIZE + value.backdrop_path
+            : no_image,
+          poster_path: value.poster_path
+            ? IMAGE_URL + POSTER_SIZE + value.poster_path
+            : no_poster,
+        }))
       : "We don't have enough data to suggest any movies based on Santana. You can help by rating movies you've seen.",
     keywords: data.keywords.keywords
       ? data.keywords.keywords.map((value, key) => ({ ...value }))
@@ -102,17 +102,17 @@ export const fetchMovie = async (id) => {
     images: {
       backdrop_path: data.images.backdrops
         ? data.images.backdrops.map((value, key) => ({
-          ...value,
-          url_original: IMAGE_URL + "w500_and_h282_face" + value.file_path,
-          url: IMAGE_URL + "w533_and_h300_bestv2" + value.file_path,
-        }))
+            ...value,
+            url_original: IMAGE_URL + "w500_and_h282_face" + value.file_path,
+            url: IMAGE_URL + "w533_and_h300_bestv2" + value.file_path,
+          }))
         : "This backdrops is unavailable",
       poster_path: data.images.posters
         ? data.images.posters.map((value, key) => ({
-          ...value,
-          url_original: IMAGE_URL + "w220_and_h330_face" + value.file_path,
-          url: IMAGE_URL + "w220_and_h330_face" + value.file_path,
-        }))
+            ...value,
+            url_original: IMAGE_URL + "w220_and_h330_face" + value.file_path,
+            url: IMAGE_URL + "w220_and_h330_face" + value.file_path,
+          }))
         : "This posters is unavailable",
     },
     certifications: data.release_dates.results.filter((item) => {

@@ -6,7 +6,7 @@ import { Skeleton } from "@material-ui/lab";
 import { useEffect, useState } from "react";
 import { Fade } from "@material-ui/core";
 import { useMediaQuery } from "react-responsive";
-import { no_user } from '../../assets';
+import { no_user } from "../../assets";
 
 const Cast = (props) => {
   const tv = props.tv;
@@ -65,14 +65,16 @@ const Cast = (props) => {
               >
                 {imgsLoaded ? (
                   <Fade in={true} timeout={600}>
-                    <div style={{
+                    <div
+                      style={{
                         backgroundColor:
-                        document
-                          .getElementsByTagName("HTML")[0]
-                          .getAttribute("data-theme") === "dark"
-                          ? "#111111"
-                          : "#dbdbdb",
-                    }}>
+                          document
+                            .getElementsByTagName("HTML")[0]
+                            .getAttribute("data-theme") === "dark"
+                            ? "#111111"
+                            : "#dbdbdb",
+                      }}
+                    >
                       <Link
                         to={
                           "/person/" + value.id + "-" + chuyenDoiUrl(value.name)
@@ -82,7 +84,8 @@ const Cast = (props) => {
                           style={{
                             width: "152px",
                             height: "228px",
-                            transform: value.profile_path === no_user && 'scale(0.7)'
+                            transform:
+                              value.profile_path === no_user && "scale(0.7)",
                           }}
                           src={value.profile_path}
                           alt=""

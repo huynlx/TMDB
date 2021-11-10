@@ -163,8 +163,8 @@ const Home = () => {
     }, 0);
   }, [root.style]);
   useEffect(() => {
-    document.title = 'The Movie Database (TMDb)'
-  }, [])
+    document.title = "The Movie Database (TMDb)";
+  }, []);
 
   return (
     <>

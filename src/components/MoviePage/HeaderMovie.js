@@ -97,8 +97,9 @@ const HeaderMovie = (props) => {
     </>
   );
   const backdropImage = {
-    backgroundImage: `url(${movie.backdrop_path !== no_image ? movie.backdrop_path : null
-      })`,
+    backgroundImage: `url(${
+      movie.backdrop_path !== no_image ? movie.backdrop_path : null
+    })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: isMobileDevice ? "center" : "right -200px top",
@@ -120,8 +121,12 @@ const HeaderMovie = (props) => {
     dispatch(X(movieInfo));
   };
   useEffect(() => {
-    document.title = movie.title + ' (' + handleDate2(movie.release_date) + ') — The Movie Database (TMDb)'
-  }, [])
+    document.title =
+      movie.title +
+      " (" +
+      handleDate2(movie.release_date) +
+      ") — The Movie Database (TMDb)";
+  }, []);
 
   return (
     <div style={backdropImage}>
@@ -231,8 +236,8 @@ const HeaderMovie = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your favorite list"
                           : !isAdded2
-                            ? "Mark as favorite"
-                            : "Remove from your favorite list"}
+                          ? "Mark as favorite"
+                          : "Remove from your favorite list"}
                       </Typography>
                     }
                     className={classes.tooltip}
@@ -243,8 +248,8 @@ const HeaderMovie = (props) => {
                         !isAuth
                           ? null
                           : !isAdded2
-                            ? () => handleAddMovie(addMovie2)
-                            : () => dispatch(removeMovie2(movie.id))
+                          ? () => handleAddMovie(addMovie2)
+                          : () => dispatch(removeMovie2(movie.id))
                       }
                     >
                       <FavoriteIcon
@@ -276,8 +281,8 @@ const HeaderMovie = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your watchlist"
                           : !isAdded
-                            ? "Add to your watchlist"
-                            : "Remove from your watchlist"}
+                          ? "Add to your watchlist"
+                          : "Remove from your watchlist"}
                       </Typography>
                     }
                     className={classes.tooltip}
@@ -288,8 +293,8 @@ const HeaderMovie = (props) => {
                         !isAuth
                           ? null
                           : !isAdded
-                            ? () => handleAddMovie(addMovie)
-                            : () => dispatch(removeMovie(movie.id))
+                          ? () => handleAddMovie(addMovie)
+                          : () => dispatch(removeMovie(movie.id))
                       }
                     >
                       {" "}
