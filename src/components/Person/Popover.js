@@ -99,19 +99,26 @@ const POPOVER = (props) => {
           }}
         >
           <Link to={"/movie/" + item.id + "-" + chuyenDoiUrl(item.title)}>
-            <img
+            <div
               className="mr-3"
-              src={item.poster_popover}
-              alt=""
               style={{
-                borderRadius: "8px",
-                width: "94px",
-                height: "141px",
                 background:
                   item.poster_popover ===
-                    "/static/media/no_poster.f9db13c5.svg" && "#dbdbdb",
-              }}
-            />
+                  "/static/media/no_poster.f9db13c5.svg" && "#dbdbdb",
+                borderRadius: "8px",
+                overflow: 'hidden'
+              }}>
+              <img
+                src={item.poster_popover}
+                alt=""
+                style={{
+                  width: "94px",
+                  height: "141px",
+                  transform: item.poster_popover ===
+                    "/static/media/no_poster.f9db13c5.svg" && "scale(0.7)"
+                }}
+              />
+            </div>
           </Link>
           <div className="content text-white">
             <h4 className="mb-2" style={title}>
@@ -153,8 +160,8 @@ const POPOVER = (props) => {
                     !isAuth
                       ? null
                       : !isAdded2
-                      ? () => handleAddMovie(addMovie2, item)
-                      : () => dispatch(removeMovie2(item.id))
+                        ? () => handleAddMovie(addMovie2, item)
+                        : () => dispatch(removeMovie2(item.id))
                   }
                   variant="contained"
                   className={classes.button}
@@ -166,8 +173,8 @@ const POPOVER = (props) => {
                     !isAuth
                       ? null
                       : !isAdded
-                      ? () => handleAddMovie(addMovie, item)
-                      : () => dispatch(removeMovie(item.id))
+                        ? () => handleAddMovie(addMovie, item)
+                        : () => dispatch(removeMovie(item.id))
                   }
                   variant="contained"
                   className={classes.button}
