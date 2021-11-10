@@ -28,8 +28,8 @@ const Movie = ({ movie, params, type, search }) => {
         {movie.results.length ? (
           movie.results.map((movie, key) =>
             type === "keyword" ||
-              type === "collection" ||
-              type === "companie" ? (
+            type === "collection" ||
+            type === "companie" ? (
               <div key={key} className="col-12">
                 <MovieCard
                   company={{ key, length }}
@@ -75,10 +75,10 @@ const Movie = ({ movie, params, type, search }) => {
         />
       } */}
       <PaginationBar
-          type={type}
-          params={params}
-          total_pages={movie.total_pages}
-        />
+        type={type}
+        params={params}
+        total_pages={movie.total_pages}
+      />
     </div>
   );
 };

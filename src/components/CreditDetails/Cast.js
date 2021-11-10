@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Skeleton } from "@material-ui/lab";
 import { Fade } from "@material-ui/core";
 import { useMediaQuery } from "react-responsive";
-import { no_user } from '../../assets';
+import { no_user } from "../../assets";
 
 const Cast = (props) => {
   const root = document.documentElement;
@@ -64,14 +64,16 @@ const Cast = (props) => {
                 {!english.test(value.name) ? ( //true => english, false => not english
                   imgsLoaded ? (
                     <Fade in={true} timeout={600}>
-                      <div style={{
-                        backgroundColor:
-                          document
-                            .getElementsByTagName("HTML")[0]
-                            .getAttribute("data-theme") === "dark"
-                            ? "#111111"
-                            : "#dbdbdb",
-                      }}>
+                      <div
+                        style={{
+                          backgroundColor:
+                            document
+                              .getElementsByTagName("HTML")[0]
+                              .getAttribute("data-theme") === "dark"
+                              ? "#111111"
+                              : "#dbdbdb",
+                        }}
+                      >
                         <Link
                           to={
                             "/person/" +
@@ -84,7 +86,8 @@ const Cast = (props) => {
                             style={{
                               height: "228px",
                               width: "152px",
-                              transform: value.profile_path === no_user && 'scale(0.7)'
+                              transform:
+                                value.profile_path === no_user && "scale(0.7)",
                             }}
                             src={value.profile_path}
                             alt=""
@@ -121,20 +124,23 @@ const Cast = (props) => {
                   )
                 ) : imgsLoaded ? (
                   <Fade in={true} timeout={600}>
-                    <div style={{
-                      backgroundColor:
-                        document
-                          .getElementsByTagName("HTML")[0]
-                          .getAttribute("data-theme") === "dark"
-                          ? "#111111"
-                          : "#dbdbdb",
-                    }}>
+                    <div
+                      style={{
+                        backgroundColor:
+                          document
+                            .getElementsByTagName("HTML")[0]
+                            .getAttribute("data-theme") === "dark"
+                            ? "#111111"
+                            : "#dbdbdb",
+                      }}
+                    >
                       <Link to={"/person/" + value.id + "-" + "invalid-name"}>
                         <img
                           style={{
                             height: "228px",
                             width: "152px",
-                            transform: value.profile_path === no_user && 'scale(0.7)'
+                            transform:
+                              value.profile_path === no_user && "scale(0.7)",
                           }}
                           src={value.profile_path}
                           alt=""

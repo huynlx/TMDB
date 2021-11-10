@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { Skeleton } from "@material-ui/lab";
 import { Fade, makeStyles } from "@material-ui/core";
 import { useEffect, useState } from "react";
-import { no_poster } from '../../assets';
+import { no_poster } from "../../assets";
 
 const useStyles = makeStyles((theme) => ({
   border: {
@@ -58,16 +58,19 @@ const KnowFor = (props) => {
                         "/movie/" + value.id + "-" + chuyenDoiUrl(value.title)
                       }
                     >
-                      <div style={{
-                        backgroundColor: 'var(--img)',
-                        borderRadius: '8px'
-                      }}>
+                      <div
+                        style={{
+                          backgroundColor: "var(--img)",
+                          borderRadius: "8px",
+                        }}
+                      >
                         <img
                           className="img-fluid"
                           src={value.poster_path}
                           alt=""
                           style={{
-                            transform: value.poster_path === no_poster && 'scale(0.7)'
+                            transform:
+                              value.poster_path === no_poster && "scale(0.7)",
                           }}
                         />
                       </div>
@@ -128,15 +131,18 @@ const KnowFor = (props) => {
                         "/movie/" + value.id + "-" + chuyenDoiUrl(value.title)
                       }
                     >
-                      <div style={{
-                        backgroundColor: 'var(--img)',
-                        borderRadius: '8px'
-                      }}>
+                      <div
+                        style={{
+                          backgroundColor: "var(--img)",
+                          borderRadius: "8px",
+                        }}
+                      >
                         <img
                           src={value.poster_path}
                           alt=""
                           style={{
-                            transform: value.poster_path === no_poster && 'scale(0.7)'
+                            transform:
+                              value.poster_path === no_poster && "scale(0.7)",
                           }}
                         />
                       </div>

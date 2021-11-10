@@ -18,11 +18,11 @@ const Index = ({ props }) => {
   const { query, type } = params;
   const [results, setResults] = useState({
     movie: {
-      results: ''
+      results: "",
     },
     tv: {
-      results: ''
-    }
+      results: "",
+    },
   });
   const [loading, setLoading] = useState(true);
   const [resultsLoading, setResultsLoading] = useState(true);
@@ -41,17 +41,17 @@ const Index = ({ props }) => {
           ...movie,
           results: [
             // ...results.movie.results,
-            ...movie.results
-          ]
+            ...movie.results,
+          ],
         },
         tv: {
           ...tv,
           results: [
             // ...results.tv.results,
-            ...tv.results
-          ]
+            ...tv.results,
+          ],
         },
-        people
+        people,
       });
       setLoading(false);
       const loadImage = (image) => {

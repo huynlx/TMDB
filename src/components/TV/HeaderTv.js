@@ -86,8 +86,9 @@ const HeaderTv = (props) => {
     </>
   );
   const backdropImage = {
-    backgroundImage: `url(${tv.backdrop_path !== no_image ? tv.backdrop_path : null
-      })`,
+    backgroundImage: `url(${
+      tv.backdrop_path !== no_image ? tv.backdrop_path : null
+    })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: isMobileDevice ? "center" : "right -200px top",
@@ -109,8 +110,12 @@ const HeaderTv = (props) => {
     dispatch(X(tvInfo));
   };
   useEffect(() => {
-    document.title = tv.name + ' (' + handleDate2(tv.first_air_date) + ') — The Movie Database (TMDb)'
-  }, [])
+    document.title =
+      tv.name +
+      " (" +
+      handleDate2(tv.first_air_date) +
+      ") — The Movie Database (TMDb)";
+  }, []);
 
   return (
     <div style={backdropImage}>
@@ -189,8 +194,8 @@ const HeaderTv = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your favorite list"
                           : !isAdded2
-                            ? "Mark as favorite"
-                            : "Remove from your favorite list"}
+                          ? "Mark as favorite"
+                          : "Remove from your favorite list"}
                       </Typography>
                     }
                     arrow
@@ -203,8 +208,8 @@ const HeaderTv = (props) => {
                         !isAuth
                           ? null
                           : !isAdded2
-                            ? () => handleAddTv(addMovie2)
-                            : () => dispatch(removeMovie2(tv.id))
+                          ? () => handleAddTv(addMovie2)
+                          : () => dispatch(removeMovie2(tv.id))
                       }
                     >
                       <FavoriteIcon
@@ -237,8 +242,8 @@ const HeaderTv = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your watchlist"
                           : !isAdded
-                            ? "Add to your watchlist"
-                            : "Remove from your watchlist"}
+                          ? "Add to your watchlist"
+                          : "Remove from your watchlist"}
                       </Typography>
                     }
                     arrow
@@ -251,8 +256,8 @@ const HeaderTv = (props) => {
                         !isAuth
                           ? null
                           : !isAdded
-                            ? () => handleAddTv(addMovie)
-                            : () => dispatch(removeMovie(tv.id))
+                          ? () => handleAddTv(addMovie)
+                          : () => dispatch(removeMovie(tv.id))
                       }
                     >
                       <BookmarkIcon
