@@ -14,7 +14,7 @@
         // "arrowParens": "avoid",
         // "semi": false,
         // "trailingComma": "none",
-        "endOfLine": "auto", //cuối dòng lệnh phải có dấu ';'
+        "endOfLine": "auto" //cuối dòng lệnh phải có dấu ';'
         // "tabWidth": 2,
         // "printWidth": 80,
         // "useTabs": false

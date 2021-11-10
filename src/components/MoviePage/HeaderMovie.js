@@ -126,7 +126,7 @@ const HeaderMovie = (props) => {
       " (" +
       handleDate2(movie.release_date) +
       ") — The Movie Database (TMDb)";
-  }, []);
+  }, [movie.release_date, movie.title]);
 
   return (
     <div style={backdropImage}>
