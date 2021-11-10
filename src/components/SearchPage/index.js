@@ -47,6 +47,7 @@ const Index = ({ props }) => {
         });
       };
       Promise.all(
+        // eslint-disable-next-line
         eval(type)
           .results.slice(0, 6)
           .map((image) => loadImage(image))

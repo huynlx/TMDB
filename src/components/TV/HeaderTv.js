@@ -115,7 +115,7 @@ const HeaderTv = (props) => {
       " (" +
       handleDate2(tv.first_air_date) +
       ") — The Movie Database (TMDb)";
-  }, []);
+  }, [tv.first_air_date, tv.name]);
 
   return (
     <div style={backdropImage}>

@@ -1,7 +1,7 @@
 import { no_poster } from "../assets";
 import { API_KEY, API_URL, IMAGE_URL, POSTER_SIZE } from "./Config";
 import API from "./axiosConfig";
-import { useState } from "react";
+
 export const popularMovie = async (query, page) => {
   try {
     const { data } = await API.get(`${API_URL}movie/popular`, {
