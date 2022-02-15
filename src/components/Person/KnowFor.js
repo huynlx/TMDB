@@ -48,7 +48,7 @@ const KnowFor = (props) => {
             root.style.setProperty("--opacityKnowFor", "1")
           }
         >
-          {person.movie_credits.cast.slice(0, 8).map((value, index) => (
+          {person.movie_credits.cast.slice(0, 10).map((value, index) => (
             <SwiperSlide key={index} title={value.title}>
               {load ? (
                 <Fade in={load} timeout={500}>

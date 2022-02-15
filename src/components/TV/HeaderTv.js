@@ -24,10 +24,11 @@ import {
 import { addMovie, removeMovie } from "../../actions/watchlistActions";
 import { useStyles } from "../MoviePage/style";
 import { timeConvert, genres, BootstrapTooltip } from "../MoviePage/functions";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const HeaderTv = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const theme = document
     .getElementsByTagName("HTML")[0]
     .getAttribute("data-theme");
@@ -40,7 +41,6 @@ const HeaderTv = (props) => {
   );
   const zoom = useRef(mediumZoom());
   const tv = props.tv;
-  console.log(tv);
   const trailer = useSelector((state) => state.trailer);
   const classes = useStyles();
   const isMobileDevice = useMediaQuery({
@@ -144,6 +144,7 @@ const HeaderTv = (props) => {
                     width={300}
                     height={450}
                   />
+                  <h3 className="w-100 text-center watch"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
                 </div>
               </Fade>
             </div>

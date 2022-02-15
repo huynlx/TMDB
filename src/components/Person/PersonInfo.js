@@ -33,13 +33,13 @@ const Person = (props) => {
         };
         if (res.movie_credits.cast.length !== 0) {
           Promise.all(
-            res.movie_credits.cast.slice(0, 7).map((image) => loadImage(image))
+            res.movie_credits.cast.slice(0, 10).map((image) => loadImage(image))
           )
             .then(() => setImgLoad(true))
             .catch((err) => console.log("Failed to load images", err));
         } else if (res.movie_credits.crew.length !== 0) {
           Promise.all(
-            res.movie_credits.crew.slice(0, 7).map((image) => loadImage(image))
+            res.movie_credits.crew.slice(0, 10).map((image) => loadImage(image))
           )
             .then(() => setImgLoad(true))
             .catch((err) => console.log("Failed to load images", err));
