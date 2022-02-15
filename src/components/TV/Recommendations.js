@@ -94,7 +94,7 @@ const Recommendations = (props) => {
                   <Link to={"/tv/" + value.id + "-" + chuyenDoiUrl(value.name)}>
                     <span className={classes.link}>{value.name}</span>
                   </Link>
-                  <p>{value.vote_average * 10 + "%"}</p>
+                  <p>{Math.floor(value.vote_average) * 10 + "%"}</p>
                 </div>
                 <div className="meta position-absolute ">
                   <span className="release_date d-flex align-items-center">
