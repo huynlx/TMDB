@@ -1,6 +1,8 @@
 import moment from "moment";
 import { useStylesBootstrap } from "./style";
 import { Tooltip } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import urlSlug from '../../helpers/urlSlug';
 
 export function timeConvert(n) {
   var num = n;
@@ -18,21 +20,19 @@ export const handleDate2 = (date) => {
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("YYYY");
 };
-export const genres = (item) => {
-  var gen = [];
-  item.map((value) => {
-    gen.push(value.name);
-    return true;
-  });
-  var i;
-  var x = "";
-  var seperator = "";
-  for (i = 0; i < gen.length; i++) {
-    x += seperator + gen[i];
-    seperator = ", ";
-  }
-  return x;
+
+
+export const genres = (item, type) => {
+  return item.map((genre, index) => {
+    return <><Link className="genre" to={{
+      pathname: `/genre/${genre.id}-${urlSlug(genre.name, true)}/${type}`,
+      query: {
+        name: genre.name,
+      }
+    }}>{genre.name}</Link><>{(item.length - 1) !== index && ', \xa0'}</></>
+  })
 };
+
 export function BootstrapTooltip(props) {
   const classes = useStylesBootstrap();
   return <Tooltip arrow classes={classes} {...props} />; //phải có classes={classes} => để dùng đc "classes"

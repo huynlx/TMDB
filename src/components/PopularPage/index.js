@@ -77,7 +77,7 @@ const Index = ({ props }) => {
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 991.98px)",
   });
-  console.log(results);
+  // console.log(results);
   return loading ? (
     <Loader />
   ) : (

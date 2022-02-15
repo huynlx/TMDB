@@ -9,7 +9,7 @@ class BtnScrollToTop extends Component {
   }
   handeleScroll() {
     if (
-      window.pageYOffset > 400 //get the current scroll position of the page.
+      window.pageYOffset > 900 //get the current scroll position of the page.
     ) {
       var elem = document.getElementById("myBtn");
       elem.style.transform = "translateY(0)";

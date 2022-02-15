@@ -1,13 +1,13 @@
 import LoadMore from "../Loading/LoadMore";
 import MovieCard from "./MovieCard";
-const Main = ({ props, loadingBtn, handleClick, page }) => {
+const Main = ({ props, loadingBtn, handleClick, page, type }) => {
   const movies = props.movies;
   return (
     <div id="main">
       <div className="container">
         <div className="movie_list">
           {movies.results.map((value, key) => (
-            <MovieCard value={value} key={key} />
+            <MovieCard type={type} value={value} key={key} />
           ))}
         </div>
         {page < movies.total_pages && (

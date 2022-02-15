@@ -43,7 +43,7 @@ const peristedState = loadState();
 
 const store = createStore(
   rootReducer,
-  peristedState, // => thằng peristedState phải ở dưới reducer, ở trên reducer là lỗi ngay
+  peristedState, // => thằng peristedState phải ở dưới reducer, ở trên reducer là lỗi ngay => vì khi f5 thì sẽ reset state nên chạy cái này để lấy dữ liệu từ localstorage cho lại vào state 
   applyMiddleware(thunk) // => thằng lồn này phải ở cuối cùng
 );
 

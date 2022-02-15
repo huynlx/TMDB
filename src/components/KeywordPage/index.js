@@ -4,9 +4,15 @@ import "../../css/Main.scss";
 import Top from "./Top";
 import Loader from "../Loading/Loader";
 import { fetchKeyword } from "../../api/fetchKeyword";
+import { fetchByGenres } from "../../api/fetchByGenres";
 import Footer from "../Footer/Footer";
 import { useMediaQuery } from "react-responsive";
+import { useLocation } from "react-router-dom";
+
 const Index = ({ props }) => {
+  const { pathname } = useLocation();
+  const genreName = props.location.query?.name ?? null;
+  const type = pathname.includes('tv') ? 'tv' : 'movie';
   const id = props.match.params.id;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,8 +26,9 @@ const Index = ({ props }) => {
   });
   useEffect(() => {
     const getAPI = async () => {
+      const func = (id, page) => pathname.includes('genre') ? fetchByGenres(id, type, page) : fetchKeyword(id, type, page);
       if (loading) {
-        await fetchKeyword(id, page).then((res) => {
+        await func(id, page).then((res) => {
           setData(res);
           const loadImage = (image) => {
             return new Promise((resolve, reject) => {
@@ -41,7 +48,7 @@ const Index = ({ props }) => {
         });
       } else {
         setLoadingBtn(true);
-        await fetchKeyword(id, page).then((res) => {
+        await func(id, page).then((res) => {
           const loadImage = (image) => {
             return new Promise((resolve, reject) => {
               const loadImg = new Image();
@@ -77,12 +84,13 @@ const Index = ({ props }) => {
     <>
       {!loading ? (
         <>
-          <Top props={data} />
+          <Top props={data} type={type} genreName={genreName} />
           <Main
             props={data}
             loadingBtn={loadingBtn}
             handleClick={handleClick}
             page={page}
+            type={type}
           />
           <Footer />
         </>

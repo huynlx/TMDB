@@ -24,12 +24,11 @@ const Routes = () => {
         <Route path="/tv/:id-:title" component={Page.Tv}></Route>
         <Route path="/person/:id-:name" component={Page.Person}></Route>
         <Route path="/movie/:id-:title/cast" component={Page.People}></Route>
+        <Route path="/movie/:id-:title/watch" component={Page.Watch}></Route>
         <Route path="/movie/:id-:title" component={Page.Movie}></Route>
+        <Route path="/genre/:id-:name/:type" component={Page.Keyword}></Route>
         <Route path="/keyword/:id-:name" component={Page.Keyword}></Route>
-        <Route
-          path="/search/:type/:query/:page"
-          component={Page.Search}
-        ></Route>
+        <Route path="/search/:type/:query/:page" component={Page.Search}></Route>
         <Route path="/:type/:page" component={Page.Popular}></Route>
         <PublicRoute path="/login" component={Page.Login}></PublicRoute>
         <PublicRoute path="/signup" component={Page.Signup}></PublicRoute>

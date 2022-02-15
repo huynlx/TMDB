@@ -1,6 +1,7 @@
-const chuyenDoiUrl = (str) => {
-  let english = /[\u3400-\u9FBF]/.test(str); // -> true => chinese, japanese language
-  if (!english) {
+const chuyenDoiUrl = (str, genres = false) => {
+  let english = /^[a-zA-Z0-9. -_?]*$/.test(str); // -> true => english
+
+  if (english || genres) {
     // Chuyển hết sang chữ thường
     str = str.toLowerCase();
     // xóa dấu
@@ -22,7 +23,7 @@ const chuyenDoiUrl = (str) => {
     // return
     return str;
   } else {
-    return "undefined";
+    return " ";
   }
 };
 export default chuyenDoiUrl;

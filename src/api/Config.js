@@ -4,7 +4,7 @@ export const API_KEY = "2bcc10a90f7e9e82823432df39ff399d";
 
 // Images
 //https://www.themoviedb.org/t/p/ or https://image.tmdb.org/t/p/
-export const IMAGE_URL = "https://www.themoviedb.org/t/p/";
+export const IMAGE_URL = "https://image.tmdb.org/t/p/";
 export const BACKDROP_SIZE = "w1280";
 export const POSTER_SIZE = "w500";
 export const VIDEO_URL = "https://www.youtube.com/embed/";

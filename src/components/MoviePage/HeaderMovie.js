@@ -29,8 +29,10 @@ import {
   genres,
   BootstrapTooltip,
 } from "./functions";
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 const HeaderMovie = (props) => {
+  const history = useHistory()
   const dispatch = useDispatch();
   const theme = document
     .getElementsByTagName("HTML")[0]
@@ -97,9 +99,8 @@ const HeaderMovie = (props) => {
     </>
   );
   const backdropImage = {
-    backgroundImage: `url(${
-      movie.backdrop_path !== no_image ? movie.backdrop_path : null
-    })`,
+    backgroundImage: `url(${movie.backdrop_path !== no_image ? movie.backdrop_path : null
+      })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: isMobileDevice ? "center" : "right -200px top",
@@ -154,6 +155,7 @@ const HeaderMovie = (props) => {
                     width={300}
                     height={450}
                   />
+                  <h3 className="w-100 text-center watch"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
                 </div>
               </Fade>
             </div>
@@ -186,7 +188,7 @@ const HeaderMovie = (props) => {
                   &nbsp;{" "}
                   {movie.iso_3166_1 !== "" && <span>({movie.iso_3166_1})</span>}
                   &nbsp; •&nbsp;{" "}
-                  {movie.genres.length ? genres(movie.genres) : "-"}&nbsp; •
+                  {movie.genres.length ? genres(movie.genres, "movie") : "-"}&nbsp; •
                   &nbsp;{timeConvert(movie.runtime)}{" "}
                 </p>
               ) : (
@@ -211,7 +213,7 @@ const HeaderMovie = (props) => {
                     &nbsp; • &nbsp;{timeConvert(movie.runtime)}
                   </p>
                   <p className="center">
-                    {movie.genres.length ? genres(movie.genres) : "-"}
+                    {movie.genres.length ? genres(movie.genres, 'movie') : "-"}
                   </p>
                 </>
               )}
@@ -236,8 +238,8 @@ const HeaderMovie = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your favorite list"
                           : !isAdded2
-                          ? "Mark as favorite"
-                          : "Remove from your favorite list"}
+                            ? "Mark as favorite"
+                            : "Remove from your favorite list"}
                       </Typography>
                     }
                     className={classes.tooltip}
@@ -248,8 +250,8 @@ const HeaderMovie = (props) => {
                         !isAuth
                           ? null
                           : !isAdded2
-                          ? () => handleAddMovie(addMovie2)
-                          : () => dispatch(removeMovie2(movie.id))
+                            ? () => handleAddMovie(addMovie2)
+                            : () => dispatch(removeMovie2(movie.id))
                       }
                     >
                       <FavoriteIcon
@@ -281,8 +283,8 @@ const HeaderMovie = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your watchlist"
                           : !isAdded
-                          ? "Add to your watchlist"
-                          : "Remove from your watchlist"}
+                            ? "Add to your watchlist"
+                            : "Remove from your watchlist"}
                       </Typography>
                     }
                     className={classes.tooltip}
@@ -293,8 +295,8 @@ const HeaderMovie = (props) => {
                         !isAuth
                           ? null
                           : !isAdded
-                          ? () => handleAddMovie(addMovie)
-                          : () => dispatch(removeMovie(movie.id))
+                            ? () => handleAddMovie(addMovie)
+                            : () => dispatch(removeMovie(movie.id))
                       }
                     >
                       {" "}

@@ -20,11 +20,19 @@ div.main {
         padding-bottom: 30px;
         // max-width: 300px;
         img {
-          border-radius: 8px;
+          border-radius: 8px 8px 0px 0px;
           min-width: 300px;
           width: 300px;
           height: 450px;
           // background-color: #dbdbdb;
+        }
+        .watch {
+          border-radius: 0px 0px 8px 8px;
+          min-width: 300px;
+          background-color: #032541;
+          font-weight: 600;
+          font-size: 1em;
+          padding: 1.3rem;
         }
       }
       .col-md {
@@ -63,6 +71,12 @@ div.main {
         }
         p.center {
           margin-bottom: 24px;
+          .genre {
+            color: inherit;
+          }
+          .genre:hover {
+            color: rgb(180, 176, 176);
+          }
         }
         .doughnut {
           display: flex;

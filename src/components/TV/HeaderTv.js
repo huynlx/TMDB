@@ -24,6 +24,7 @@ import {
 import { addMovie, removeMovie } from "../../actions/watchlistActions";
 import { useStyles } from "../MoviePage/style";
 import { timeConvert, genres, BootstrapTooltip } from "../MoviePage/functions";
+import { Link } from "react-router-dom";
 
 const HeaderTv = (props) => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const HeaderTv = (props) => {
   );
   const zoom = useRef(mediumZoom());
   const tv = props.tv;
+  console.log(tv);
   const trailer = useSelector((state) => state.trailer);
   const classes = useStyles();
   const isMobileDevice = useMediaQuery({
@@ -86,9 +88,8 @@ const HeaderTv = (props) => {
     </>
   );
   const backdropImage = {
-    backgroundImage: `url(${
-      tv.backdrop_path !== no_image ? tv.backdrop_path : null
-    })`,
+    backgroundImage: `url(${tv.backdrop_path !== no_image ? tv.backdrop_path : null
+      })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: isMobileDevice ? "center" : "right -200px top",
@@ -157,7 +158,7 @@ const HeaderTv = (props) => {
                     "(" + handleDate2(tv.first_air_date) + ")"}
                 </span>
               </h3>
-              <p className="center s2">
+              <p className="center s2 genres">
                 <span
                   style={{
                     border: "1px solid",
@@ -169,7 +170,7 @@ const HeaderTv = (props) => {
                 >
                   TV-MA
                 </span>{" "}
-                {tv.genres.length ? genres(tv.genres) : "-"}&nbsp; • &nbsp;
+                {tv.genres.length ? genres(tv.genres, 'tv') : "-"}&nbsp; • &nbsp;
                 {timeConvert(tv.episode_run_time[0])}{" "}
               </p>
               <div className="doughnut">
@@ -194,8 +195,8 @@ const HeaderTv = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your favorite list"
                           : !isAdded2
-                          ? "Mark as favorite"
-                          : "Remove from your favorite list"}
+                            ? "Mark as favorite"
+                            : "Remove from your favorite list"}
                       </Typography>
                     }
                     arrow
@@ -208,8 +209,8 @@ const HeaderTv = (props) => {
                         !isAuth
                           ? null
                           : !isAdded2
-                          ? () => handleAddTv(addMovie2)
-                          : () => dispatch(removeMovie2(tv.id))
+                            ? () => handleAddTv(addMovie2)
+                            : () => dispatch(removeMovie2(tv.id))
                       }
                     >
                       <FavoriteIcon
@@ -242,8 +243,8 @@ const HeaderTv = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your watchlist"
                           : !isAdded
-                          ? "Add to your watchlist"
-                          : "Remove from your watchlist"}
+                            ? "Add to your watchlist"
+                            : "Remove from your watchlist"}
                       </Typography>
                     }
                     arrow
@@ -256,8 +257,8 @@ const HeaderTv = (props) => {
                         !isAuth
                           ? null
                           : !isAdded
-                          ? () => handleAddTv(addMovie)
-                          : () => dispatch(removeMovie(tv.id))
+                            ? () => handleAddTv(addMovie)
+                            : () => dispatch(removeMovie(tv.id))
                       }
                     >
                       <BookmarkIcon

@@ -11,7 +11,10 @@ import {
 const InitialState = {
   isAuth: !!localStorage.getItem("token"), //!!=> chuyển đổi đối tượng thành boolean(0,null,undefined,false=>false,còn lại=>true)
   user: {},
-  error: {},
+  error: {
+    user: {loginError: { user: false, password: false }}, 
+    cc: { signupError: { user: false, email: false } }
+  },
   isLoading: false,
 };
 const user = (state = InitialState, payload) => {

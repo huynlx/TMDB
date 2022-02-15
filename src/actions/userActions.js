@@ -24,7 +24,7 @@ export const signUp = (newUser) => async (dispatch) => {
   try {
     const { data } = await axios.post(`${BACKEND}users/signup`, newUser);
     // localStorage.setItem("token", JSON.stringify(data.token));
-    console.log(data);
+    // console.log(data);
     dispatch({ type: SIGNUP_SUCCESS, user: data });
   } catch (err) {
     //status 400

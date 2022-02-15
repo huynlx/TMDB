@@ -54,3 +54,6 @@ export const Error = lazy(async () => {
 export const Profile = lazy(async () => {
   return import("../pages/Profile");
 });
+export const Watch = lazy(async () => {
+  return import("../pages/Watch");
+});

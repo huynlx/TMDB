@@ -29,7 +29,7 @@ const Cast = (props) => {
     };
     Promise.all(
       movie.credits.cast
-        .slice(0, isMobileDevice ? 3 : 6)
+        .slice(0, isMobileDevice ? 3 : 9)
         .map((image) => loadImage(image))
     )
       .then(() => setImgsLoaded(true))
