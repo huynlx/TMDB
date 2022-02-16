@@ -10,7 +10,7 @@ export const fetchPeople = async (id) => {
         append_to_response: "credits",
       },
     });
-
+console.log(data);
     const lastData = {
       ...data.credits,
       cast: data.credits.cast.map((item) => ({

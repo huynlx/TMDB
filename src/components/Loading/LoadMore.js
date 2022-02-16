@@ -1,7 +1,18 @@
 import { Box, Button, CircularProgress } from "@material-ui/core";
 import { memo, useState } from "react";
+import Loading from './Ball-scale-multiple';
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(() => ({
+  custom: {
+    "&.MuiCircularProgress-root": {
+      visibility: () => "hidden"
+    }
+  },
+}));
 
 const LoadMore = ({ loading, handleClick }) => {
+  const { custom } = useStyles({});
   const [hover, setHover] = useState(false);
   const style = {
     backgroundColor: "#01B4E4",
@@ -18,9 +29,10 @@ const LoadMore = ({ loading, handleClick }) => {
     <Box
       display="flex"
       justifyContent="center"
-      style={{ padding: "4px 0px", marginTop: "20px" }}
+      style={{ padding: "4px 0px", marginTop: "20px", position: 'relative' }}
     >
-      <CircularProgress color={root === "dark" ? "secondary" : "primary"} />
+      <Loading />
+      <CircularProgress className={custom} color={root === "dark" ? "secondary" : "primary"} />
     </Box>
   ) : (
     <Button style={style} variant="contained" fullWidth onClick={handleClick}>

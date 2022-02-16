@@ -1,0 +1,131 @@
+@import "./../../css/variable";
+@import "./../../css/mixin";
+
+.main {
+    #watch {
+        .container {
+            height: max-content;
+        }
+        .row {
+            .col-12,
+            .col-sm-12,
+            .col-md-12,
+            .col-lg-9 {
+                .video {
+                    overflow: hidden;
+                    width: 100%;
+                    padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                }
+                .holds-the-iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .responsive-iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .infoWatch {
+                    height: auto;
+                    .genre {
+                        border: 1.5px solid var(--bgGenre);
+                        border-radius: 30px;
+                        padding: 0.1rem 0.5rem 0.3rem 0.5rem;
+                        transition: all 0.5s;
+                    }
+                    .genre:hover {
+                        background-color: var(--bgGenre);
+                        color: var(--colorGenre);
+                    }
+                }
+            }
+            .col-12,
+            .col-sm-12,
+            .col-md-12,
+            .col-lg-3 {
+                position: relative;
+                .similars {
+                    gap: 1rem;
+                    overflow-y: scroll;
+                    max-height: 93%;
+                    position: absolute;
+                    .item {
+                        gap: 1rem;
+                        img {
+                            height: 150px;
+                            min-width: 100px;
+                            object-fit: contain;
+                            border-radius: $imgBorderRadius;
+                        }
+                        button {
+                            border-radius: 4px;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin responsive() {
+    .main {
+        #watch {
+            .row {
+                .col-12,
+                .col-sm-12,
+                .col-md-12,
+                .col-lg-3 {
+                    h4 {
+                        margin-top: 2rem;
+                    }
+                    .similars {
+                        max-height: none;
+                        position: static;
+                        .item {
+                            img {
+                                border-radius: $imgBorderRadiusMobile;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//mobile
+@include responsive_320 {
+    @include responsive();
+}
+
+@include responsive_375 {
+    @include responsive();
+}
+
+@include responsive_425 {
+    @include responsive();
+}
+
+@include responsive_768 {
+    @include responsive();
+}
+
+@include responsive_992 {
+    @include responsive();
+}
+
+// @include responsive_1024 {
+//     @include responsive();
+// }
+
+// @include responsive_1200 {
+//     @include responsive();
+// }

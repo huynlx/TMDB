@@ -20,7 +20,7 @@ const PaginationBar = ({ total_pages, params, type }) => {
       .getElementsByTagName("HTML")[0]
       .getAttribute("data-theme"),
   };
-  const { ul } = useStyles(theme); //tham số của useStyles phải là object
+  const { ul } = useStyles(theme); //tham số truyền vào của useStyles phải là object
   const history = useHistory();
   const matches = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const handleChange = (event, value) => {

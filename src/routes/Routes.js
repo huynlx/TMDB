@@ -21,6 +21,7 @@ const Routes = () => {
         <Route path="/company/:id" component={Page.Company}></Route>
         <Route path="/collection/:id" component={Page.Collection}></Route>
         <Route path="/tv/:id-:title/cast" component={Page.PeopleTv}></Route>
+        <Route path="/tv/:id-:title/watch" component={Page.Watch}></Route>
         <Route path="/tv/:id-:title" component={Page.Tv}></Route>
         <Route path="/person/:id-:name" component={Page.Person}></Route>
         <Route path="/movie/:id-:title/cast" component={Page.People}></Route>

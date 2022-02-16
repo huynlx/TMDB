@@ -1,5 +1,5 @@
 import { API_KEY, API_URL, BACKDROP_SIZE, IMAGE_URL } from "./Config";
-import { no_image } from "../assets";
+import { no_image, no_poster } from "../assets";
 import API from "./axiosConfig";
 export const fetchTrailer = async (type, media_type) => {
   try {
@@ -23,8 +23,8 @@ export const fetchTrailer = async (type, media_type) => {
                   : no_image,
                 background: item.backdrop_path
                   ? IMAGE_URL +
-                    "w1920_and_h427_multi_faces" +
-                    item.backdrop_path
+                  "w1920_and_h427_multi_faces" +
+                  item.backdrop_path
                   : null,
                 trailer: res.results,
                 title: media_type === "movie" ? item.title : item.name,

@@ -144,7 +144,7 @@ const HeaderTv = (props) => {
                     width={300}
                     height={450}
                   />
-                  <h3 className="w-100 text-center watch"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
+                  <h3 className="w-100 text-center watch mb-0"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
                 </div>
               </Fade>
             </div>

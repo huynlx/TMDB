@@ -71,7 +71,7 @@ const Backdrop = (props) => {
     fetchData();
     // return () => { setImgsLoaded(false); }
   }, [id]); //tham số locationKeys tự thay đổi khi điều hướng => trigger componentWillUnMount trước khi render nếu có (return)
-
+  console.log(movie);
   return !imgsLoaded ? (
     <Loader />
   ) : (

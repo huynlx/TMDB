@@ -7,6 +7,7 @@ const handleDate = (date) => {
 };
 const Top = (props) => {
   const color = useSelector((state) => state.color);
+  
   return (
     <div
       className="top"
