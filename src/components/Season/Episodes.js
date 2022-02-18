@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import handleDate from '../../helpers/handleDate';
+import { no_poster } from '../../assets';
 
 
 const Episodes = ({ data }) => {
@@ -13,7 +14,19 @@ const Episodes = ({ data }) => {
         data.episodes.map(item => (
           <div className='card' key={item.id}>
             <div className='wrapped' key={item.id}>
-              <img src={item.still_path} alt="" />
+              <div className='wrapImg'>
+                <img src={item.still_path} alt="" loading='lazy'
+                  onError={(e) => {
+                    e.currentTarget.onerror = null; // prevents looping
+                    e.currentTarget.src = no_poster;
+                    e.currentTarget.style.transform = 'scale(0.5)';
+                    e.currentTarget.style.objectFit = 'contain';
+                  }}
+                  onLoad={({ currentTarget }) => {
+                    currentTarget.style.opacity = 1;
+                  }}
+                />
+              </div>
               <div className="root w-100">
                 <h5>{item.episode_number}&nbsp;<span>&#9733; &nbsp;{parseFloat(item.vote_average).toFixed(1)}</span> {item.name} <small>{handleDate(item.air_date)}</small></h5>
                 <p className='mb-0'>{item.overview !== '' ? item.overview : "We don't have an overview translated in English."}</p>

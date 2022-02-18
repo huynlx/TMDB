@@ -1,13 +1,15 @@
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { no_poster } from "../../assets";
+
 const handleDate = (date) => {
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("YYYY");
 };
 const Top = (props) => {
   const color = useSelector((state) => state.color);
-  
+
   return (
     <div
       className="top"
@@ -21,20 +23,31 @@ const Top = (props) => {
       <div className="container">
         <div className="header">
           <Link to={"/movie/" + props.data.id + "-" + props.data.title}>
-            <img
-              src={props.url.poster_path}
-              alt=""
-              width={58}
-              height={87}
-              loading="eager"
-            />
+            <div className="wrapImg">
+              <img
+                src={props.url.poster_path}
+                alt=""
+                width={58}
+                height={87}
+                loading="eager"
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = no_poster;
+                  currentTarget.style.transform = 'scale(0.5)';
+                  currentTarget.style.objectFit = 'contain';
+                }}
+                onLoad={({ currentTarget }) => {
+                  currentTarget.style.opacity = 1;
+                }}
+              />
+            </div>
           </Link>
           <div
             className="ahihi"
             style={{
               color:
                 document.documentElement.style.getPropertyValue("--theme") ===
-                "light"
+                  "light"
                   ? color.text
                   : "white",
             }}

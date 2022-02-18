@@ -53,9 +53,19 @@
                 border-radius: $imgBorderRadius;
                 overflow: hidden;
                 .wrapped {
-                    img {
-                        width: 229px;
+                    .wrapImg{
+                        max-width: 229px;
+                        width: 100%;
                         height: 130px;
+                        overflow: hidden;
+                        background-color: #dbdbdb;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            transition: all 0.3s;
+                            opacity: 0;
+                            object-fit: cover;
+                        }
                     }
                     display: flex;
                     .root {

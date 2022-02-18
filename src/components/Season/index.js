@@ -58,7 +58,7 @@ const Index = ({ props }) => {
   return dt ? (
     <>
       <Top data={data} url={url} />
-      <div id='nav'>
+      <div id='nav' className={seasons.length < 2 && `d-none`}>
         <div className='container'>
           <div className={clsx('Prev', seasonindex == 0 && 'invisible')} onClick={() => prevSeasonNumber()}>
             <span title='Previous Season' className={clsx('arrow-thin-left arrow-left')}></span>
@@ -71,7 +71,7 @@ const Index = ({ props }) => {
         </div>
       </div>
       <div className='main' id='season'>
-        <div className="container">
+        <div className="container" style={{ padding: seasons.length < 2 && '20px 30px 10px 30px' }}>
           <Episodes data={dt} />
         </div>
       </div>

@@ -1,6 +1,8 @@
 import moment from "moment";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { no_poster } from "../../../assets";
+
 const handleDate = (date) => {
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("YYYY");
@@ -21,13 +23,24 @@ const Top = (props) => {
       <div className="container">
         <div className="header">
           <Link to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/season/${props.data.seasonnumber}`}`}>
-            <img
-              src={props.url.poster_path}
-              alt=""
-              width={58}
-              height={87}
-              loading="eager"
-            />
+            <div className="wrapImg">
+              <img
+                src={props.url.poster_path}
+                alt=""
+                width={58}
+                height={87}
+                loading="eager"
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = no_poster;
+                  currentTarget.style.transform = 'scale(0.5)';
+                  currentTarget.style.objectFit = 'contain';
+                }}
+                onLoad={({ currentTarget }) => {
+                  currentTarget.style.opacity = 1;
+                }}
+              />
+            </div>
           </Link>
           <div
             className="ahihi"
