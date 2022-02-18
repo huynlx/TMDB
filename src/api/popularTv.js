@@ -18,6 +18,7 @@ export const popularTv = async (query, page) => {
           ? IMAGE_URL + POSTER_SIZE + tv.poster_path
           : no_poster,
       })),
+      total_pages: 500
     };
     return modifiedData;
   } catch (e) {

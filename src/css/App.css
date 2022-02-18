@@ -24,7 +24,7 @@ html,
 body {
   background-color: var(--background-color);
   color: var(--color);
-  transition: background-color 500ms ease, color 500ms ease;
+  transition: background-color 0ms ease, color 0ms ease;
   overflow-y: scroll;
   margin: 0;
   font-family: var(--font);

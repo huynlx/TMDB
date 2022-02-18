@@ -50,21 +50,23 @@ const Season = (props) => {
       >
         {season && (
           <>
-            <img
-              style={{
-                backgroundColor: "#dbdbdb",
-                maxWidth: "130px",
-                minWidth: "130px",
-                height: "195px",
-              }}
-              src={
-                season.poster_path
-                  ? IMAGE_URL + "w500" + season.poster_path
-                  : no_poster
-              }
-              alt=""
-              loading="lazy"
-            />
+            <div style={{ backgroundColor: "#dbdbdb" }}>
+              <img
+                style={{
+                  maxWidth: "130px",
+                  minWidth: "130px",
+                  height: "195px",
+                  transform: season.poster_path ? '' : 'scale(0.7)'
+                }}
+                src={
+                  season.poster_path
+                    ? IMAGE_URL + "w500" + season.poster_path
+                    : no_poster
+                }
+                alt=""
+                loading="lazy"
+              />
+            </div>
             <div className="box w-100 pl-4 pr-4 d-flex flex-column justify-content-center">
               <h4 className="p-0 m-0" style={{ fontWeight: "600" }}>
                 Season {lastSeason}
