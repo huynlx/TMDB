@@ -36,8 +36,8 @@ const Watch = (props) => {
 	const [opened, setOpened] = useState(undefined);
 	const [episode, setEpisode] = useState({
 		episode: 1,
-		season: 0,
-		indexSeason: 0,
+		season: 1,
+		indexSeason: 1,
 		indexEpisode: 0
 	});
 	const id = props.match.params.id;
