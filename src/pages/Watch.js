@@ -54,7 +54,7 @@ const Watch = (props) => {
 
 	useEffect(() => {
 		!first && NProgress.start();
-		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+		// window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 		setFirst(false);
 		NProgress.done();
 	}, [episode])
@@ -103,7 +103,7 @@ const Watch = (props) => {
 								<iframe id='myIframe' className={clsx('responsive-iframe w-100')} frameBorder="0" src={type == 'movie' ? embedMovie(id) : embedEpisode(id, episode.season, episode.episode)} allowFullScreen></iframe>
 							</div>
 							<div className='infoWatch mt-3'>
-								<h4 className='mt-0 font-weight-bold'>{movie.title ?? movie.name}</h4>
+								<h4 className='mt-0 font-weight-bold'><Link to={`/${type}/${id}-${title}`}>{movie.title ?? movie.name}</Link></h4>
 								<ul>
 									{
 										movie.genres.map(genre => <Link to={{
@@ -142,6 +142,7 @@ const Watch = (props) => {
 														</Link>
 														<div className='d-flex flex-column'>
 															<Link title={item.title} className={clsx('line-clamp-2 font-weight-bold titleSimilar', id == item.id && 'text-orange')} to={`/movie/${item.id + '-' + urlToSlug(item.title)}`}>{item.title}</Link>
+															<p className='mb-0'>{handleDate(item.release_date)}</p>
 															<StarRating maximum={5} stars={Math.round(item.vote_average / 2)} extraText={` (${item.vote_count.toLocaleString()} votes)`} />
 															<Link to={`/movie/${item.id + '-' + urlToSlug(item.title)}/watch`}><button className='p-2 mt-2'>Watch Now</button></Link>
 														</div>

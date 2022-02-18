@@ -13,6 +13,7 @@ export function timeConvert(n) {
   return rhours + "h " + rminutes + "m";
 }
 export const handleDate = (date) => {
+  if (!date) return '';
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("DD/MM/YYYY");
 };

@@ -29,10 +29,10 @@ import {
   genres,
   BootstrapTooltip,
 } from "./functions";
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const HeaderMovie = (props) => {
-  const history = useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const theme = document
     .getElementsByTagName("HTML")[0]

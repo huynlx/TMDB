@@ -7,7 +7,7 @@ const handleDate = (date) => {
 };
 const Top = (props) => {
   const color = useSelector((state) => state.color);
-  
+
   return (
     <div
       className="top"
@@ -20,7 +20,7 @@ const Top = (props) => {
     >
       <div className="container">
         <div className="header">
-          <Link to={"/tv/" + props.data.id + "-" + props.data.title}>
+          <Link to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/season/${props.data.seasonnumber}`}`}>
             <img
               src={props.url.poster_path}
               alt=""
@@ -34,7 +34,7 @@ const Top = (props) => {
             style={{
               color:
                 document.documentElement.style.getPropertyValue("--theme") ===
-                "light"
+                  "light"
                   ? color.text
                   : "white",
             }}
@@ -42,7 +42,7 @@ const Top = (props) => {
             <h4 className="display-5">
               <Link
                 style={{ color: "inherit" }}
-                to={"/tv/" + props.data.id + "-" + props.data.title}
+                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/season/${props.data.seasonnumber}`}`}
               >
                 {props.url.title}
               </Link>
@@ -55,9 +55,11 @@ const Top = (props) => {
             <h3>
               <Link
                 style={{ color: "inherit" }}
-                to={"/tv/" + props.data.id + "-" + props.data.title}
+                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/seasons`}`}
               >
-                ← Back to main
+                {
+                  props.data.seasonnumber ? '← Back to season list' : '← Back to main'
+                }
               </Link>
             </h3>
           </div>

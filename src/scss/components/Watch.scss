@@ -48,6 +48,12 @@
                     background-color: var(--bgGenre);
                     color: var(--colorGenre);
                 }
+                h4{
+                    width: fit-content;
+                    &:hover{
+                        color: #7f7f7f;
+                    }
+                }
             }
         }
         .col-12,
@@ -71,6 +77,9 @@
                             height: 150px;
                             min-width: 100px;
                             object-fit: cover;
+                            &:hover{
+                                filter: brightness(.9);
+                            }
                         }
                     }
                     button {

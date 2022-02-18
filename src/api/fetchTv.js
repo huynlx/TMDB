@@ -112,14 +112,15 @@ export const fetchTv = async (id) => {
     seasons: await Promise.all(data.seasons.map(async (season) => {
       return {
         ...season,
-        episodes: await fetchSeasonsData(id, season.season_number)
+        episodes: await fetchSeasonsDataEpisodes(id, season.season_number),
+        poster_path: IMAGE_URL + POSTER_SIZE + season.poster_path,
       }
     }))
   };
   return checkData;
 };
 
-const fetchSeasonsData = async (id, seasonNumber) => {
+export const fetchSeasonsDataEpisodes = async (id, seasonNumber) => {
   try {
     const { data } = await API.get(`${API_URL}tv/${id}/season/${seasonNumber}`, {
       params: {
@@ -127,7 +128,31 @@ const fetchSeasonsData = async (id, seasonNumber) => {
       }
     });
 
-    return data.episodes;
+    return data.episodes.map(item => ({
+      ...item,
+      still_path: IMAGE_URL + POSTER_SIZE + item.still_path,
+    }));
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export const fetchSeasonsData = async (id, seasonNumber) => {
+  try {
+    const { data } = await API.get(`${API_URL}tv/${id}/season/${seasonNumber}`, {
+      params: {
+        api_key: API_KEY,
+      }
+    });
+
+    return {
+      ...data,
+      poster_path: IMAGE_URL + POSTER_SIZE + data.poster_path,
+      episodes: data.episodes.map(item => ({
+        ...item,
+        still_path: IMAGE_URL + POSTER_SIZE + item.still_path,
+      }))
+    };
   } catch (e) {
     console.log(e);
   }

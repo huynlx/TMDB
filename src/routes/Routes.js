@@ -10,16 +10,12 @@ const Routes = () => {
     <Suspense fallback={<Loader />}>
       <Switch>
         <Route exact path="/" component={Page.Home}></Route>
-        <Route
-          path="/:mediaType/:id-:title/videos/:type"
-          component={Page.Videos}
-        ></Route>
-        <Route
-          path="/:mediaType/:id-:title/images/:type"
-          component={Page.Images}
-        ></Route>
+        <Route path="/:mediaType/:id-:title/videos/:type" component={Page.Videos}></Route>
+        <Route path="/:mediaType/:id-:title/images/:type" component={Page.Images}></Route>
         <Route path="/company/:id" component={Page.Company}></Route>
         <Route path="/collection/:id" component={Page.Collection}></Route>
+        <Route path="/tv/:id-:title/season/:seasonnumber" component={Page.Season}></Route>
+        <Route path="/tv/:id-:title/seasons" component={Page.SeasonList}></Route>
         <Route path="/tv/:id-:title/cast" component={Page.PeopleTv}></Route>
         <Route path="/tv/:id-:title/watch" component={Page.Watch}></Route>
         <Route path="/tv/:id-:title" component={Page.Tv}></Route>

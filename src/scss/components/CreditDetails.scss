@@ -32,11 +32,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-image: linear-gradient(
-              to right,
-              rgba(255, 255, 255, 0) 0%,
-              var(--scrollBar) 100%
-            );
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
             z-index: 999;
             will-change: opacity;
             pointer-events: none;
@@ -48,6 +44,12 @@
         .dkmn,
         .hr {
           padding-left: 30px;
+        }
+        h4.nameSS {
+          width: fit-content;
+          &:hover {
+            color: #7f7f7f;
+          }
         }
         .swiper-wrapper {
           padding-left: 2px;
@@ -205,11 +207,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-image: linear-gradient(
-              to right,
-              rgba(255, 255, 255, 0) 0%,
-              var(--scrollBar) 100%
-            );
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
             z-index: 999;
             will-change: opacity;
             pointer-events: none;
@@ -261,11 +259,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-image: linear-gradient(
-              to right,
-              rgba(255, 255, 255, 0) 0%,
-              var(--scrollBar) 100%
-            );
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
             z-index: 999;
             will-change: opacity;
             pointer-events: none;

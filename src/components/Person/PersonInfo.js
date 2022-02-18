@@ -49,6 +49,7 @@ const Person = (props) => {
     getData();
     root.style.setProperty("--opacityKnowFor", "1");
   }, [id, root]);
+
   return loading !== true ? (
     <>
       <div className="person">

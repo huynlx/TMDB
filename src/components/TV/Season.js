@@ -4,11 +4,13 @@ import { API_KEY, API_URL, IMAGE_URL } from "../../api/Config";
 import axios from "axios";
 import no_poster from "../../assets/no_poster.svg";
 import handleDate from "./../../helpers/handleDate";
+import { Link, useHistory } from 'react-router-dom';
 export const handleDate2 = (date) => {
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("YYYY");
 };
 const Season = (props) => {
+  const history = useHistory()
   const [season, setSeason] = useState(null);
   const id = props.tv.id;
   const name = props.tv.name;
@@ -31,6 +33,7 @@ const Season = (props) => {
     };
     getData(id);
   }, [id, lastSeason]);
+  // console.log(lastSeason);
   return (
     <div className="season">
       <h4
@@ -68,8 +71,8 @@ const Season = (props) => {
               />
             </div>
             <div className="box w-100 pl-4 pr-4 d-flex flex-column justify-content-center">
-              <h4 className="p-0 m-0" style={{ fontWeight: "600" }}>
-                Season {lastSeason}
+              <h4 className="p-0 m-0 nameSS" style={{ fontWeight: "600" }}>
+                <Link to={`${history.location.pathname}/season/${lastSeason}`}>Season {lastSeason}</Link>
               </h4>
               <h6 style={{ fontWeight: "bold" }}>
                 {handleDate2(lastYear)} | {season.episodes.length} Episodes

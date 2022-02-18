@@ -57,3 +57,9 @@ export const Profile = lazy(async () => {
 export const Watch = lazy(async () => {
   return import("../pages/Watch");
 });
+export const Season = lazy(async () => {
+  return import("../pages/Season");
+});
+export const SeasonList = lazy(async () => {
+  return import("../pages/SeasonList");
+});
