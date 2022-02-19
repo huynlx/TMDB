@@ -48,9 +48,9 @@
                     background-color: var(--bgGenre);
                     color: var(--colorGenre);
                 }
-                h4{
+                h4 {
                     width: fit-content;
-                    &:hover{
+                    &:hover {
                         color: #7f7f7f;
                     }
                 }
@@ -77,8 +77,8 @@
                             height: 150px;
                             min-width: 100px;
                             object-fit: cover;
-                            &:hover{
-                                filter: brightness(.9);
+                            &:hover {
+                                filter: brightness(0.9);
                             }
                         }
                     }
@@ -87,7 +87,7 @@
                         font-size: 1rem;
                     }
                     .titleSimilar {
-                        transition: all 0.3s;
+                        // transition: all 0.3s;
                     }
                     .titleSimilar:hover {
                         color: #29d;

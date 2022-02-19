@@ -4,14 +4,14 @@ import handleDate from '../../helpers/handleDate';
 import { no_poster } from '../../assets';
 
 
-const Episodes = ({ data, slug }) => {
+const Episodes = ({ data, slug, theme }) => {
 
   return (
     <div className='episode'>
       <h4>Episodes <span>{data.episode_count}</span></h4>
       {
         data.episodes.map((item, index) => (
-          <div className='cardItem' key={item.id}>
+          <div className='cardItem' key={item.id} style={{ borderColor: theme === 'dark' && 'rgb(49, 49, 49)' }}>
             <div className='wrapped' key={item.id}>
               <div className='wrapImg'>
                 <img src={item.still_path} alt="" loading='lazy'
@@ -31,8 +31,8 @@ const Episodes = ({ data, slug }) => {
                 <p className='mb-0'>{item.overview !== '' ? item.overview : "We don't have an overview translated in English."}</p>
               </div>
             </div>
-            <div className='expand'>
-              <p className='mb-0'><Link to={{
+            <div className='expand' style={{ borderColor: theme === 'dark' && 'rgb(49, 49, 49)' }}>
+              <p className='mb-0' onMouseOver={({ currentTarget }) => currentTarget.style.color = '#7f7f7f'}><Link to={{
                 pathname: `/tv/${slug.id}-${slug.title}/watch`,
                 query: {
                   episode: item.episode_number,

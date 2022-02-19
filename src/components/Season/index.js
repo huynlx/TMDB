@@ -18,6 +18,8 @@ const Index = ({ props }) => {
   const [seasonindex, setSeasonIndex] = useState(null);
   const [dt, setDt] = useState(null);
   const [seasons, setSeasons] = useState(null);
+  const theme = getComputedStyle(document.documentElement).getPropertyValue('--theme').trim();
+
   const data = {
     id: id,
     title: title,
@@ -58,21 +60,21 @@ const Index = ({ props }) => {
   return dt ? (
     <>
       <Top data={data} url={url} />
-      <div id='nav' className={seasons.length < 2 && `d-none`}>
+      <div id='nav' className={seasons.length < 2 && `d-none`} style={{ borderColor: theme === 'dark' && 'rgb(49, 49, 49)' }}>
         <div className='container'>
           <div className={clsx('Prev', seasonindex == 0 && 'invisible')} onClick={() => prevSeasonNumber()}>
-            <span title='Previous Season' className={clsx('arrow-thin-left arrow-left')}></span>
+            <span style={{ filter: theme === 'dark' && 'invert(1)' }} title='Previous Season' className={clsx('arrow-thin-left arrow-left')}></span>
             <span>{seasonindex != 0 ? seasons[seasonnumber - 1].name : ""}</span>
           </div>
           <div className={clsx('Next', seasonindex >= seasons.length - 1 && "invisible")} onClick={() => nextSeasonNumber()}>
             <span>{seasonindex < seasons.length - 1 ? seasons[seasonindex + 1].name : ""}</span>
-            <span title='Next Season' className={clsx('arrow-thin-right arrow-right')}></span>
+            <span style={{ filter: theme === 'dark' && 'invert(1)' }} title='Next Season' className={clsx('arrow-thin-right arrow-right')}></span>
           </div>
         </div>
       </div>
       <div className='main' id='season'>
         <div className="container">
-          <Episodes data={dt} slug={data}/>
+          <Episodes data={dt} slug={data} theme={theme} />
         </div>
       </div>
       <Footer></Footer>

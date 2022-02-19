@@ -3,7 +3,7 @@ import '../../scss/components/Loading/BallScaleMulti.scss';
 
 const Index = () => {
     return (
-        <div class="ball-scale-multiple">
+        <div className="ball-scale-multiple">
             <div></div>
             <div></div>
             <div></div>

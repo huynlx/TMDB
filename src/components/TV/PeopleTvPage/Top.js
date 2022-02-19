@@ -15,9 +15,10 @@ const Top = (props) => {
       className="top"
       style={{
         backgroundColor:
-          document.documentElement.style.getPropertyValue("--theme") === "light"
+          document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light"
             ? `rgba(${color.backdrop},1)`
             : "#2C3132",
+        borderBottom: document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "dark" && "none"
       }}
     >
       <div className="container">
@@ -48,8 +49,7 @@ const Top = (props) => {
             className="ahihi"
             style={{
               color:
-                document.documentElement.style.getPropertyValue("--theme") ===
-                  "light"
+                document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light"
                   ? color.text
                   : "white",
             }}

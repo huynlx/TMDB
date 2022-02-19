@@ -1,6 +1,7 @@
 import "../../scss/components/Top.scss";
 const Top = ({ props, type, genreName }) => {
-  const name = genreName;
+  const name = genreName ?? props.name;
+  
   return (
     <div id="top-keyword">
       <div className="content light-blue_icon">

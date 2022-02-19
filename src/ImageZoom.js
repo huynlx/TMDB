@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import clsx from "clsx";
 
-function ImageZoom({ zoom, src, alt, background, id, width, height }) {
+function ImageZoom({ zoom, src, alt, background, id, width, height, rounded = true }) {
   const key = id;
   const zoomRef = useRef(zoom.clone({ background }));
   const [ImageLoaded, loadImage] = useState({
@@ -13,7 +13,7 @@ function ImageZoom({ zoom, src, alt, background, id, width, height }) {
   }
   return (
     <img
-      style={{ zIndex: "999" }}
+      style={{ zIndex: "999", borderBottomLeftRadius: !rounded && '0', borderBottomRightRadius: !rounded && '0' }}
       src={src}
       alt={alt}
       ref={attachZoom}

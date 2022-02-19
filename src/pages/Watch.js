@@ -40,6 +40,8 @@ const Watch = (props) => {
 		indexSeason: props.location.query ? props.location.query.indexSeason : 0,
 		indexEpisode: props.location.query ? props.location.query.indexEpisode : 0
 	});
+	const root = document.documentElement;
+	const theme = getComputedStyle(root).getPropertyValue('--theme').trim();
 	const id = props.match.params.id;
 	const title = props.match.params.title;
 	const [movie, setMovie] = useState(null);
@@ -79,14 +81,20 @@ const Watch = (props) => {
 	}, [id])
 
 	const linkStyle = () => {
-		const root = document.documentElement;
-		// console.log(root.style.getPropertyValue("--theme")); //root.style.getPropertyValue("--theme") đéo work
-		if (document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light") {
+		if (theme === "light") {
 			root.style.setProperty("--bgGenre", "black");
 			root.style.setProperty("--colorGenre", "white");
 		} else {
 			root.style.setProperty("--bgGenre", "white");
 			root.style.setProperty("--colorGenre", "black");
+		}
+	}
+	const season = () => {
+		if (theme === "dark") {
+			return {
+				borderColor: 'transparent',
+				background: '#313131'
+			}
 		}
 	}
 
@@ -145,7 +153,7 @@ const Watch = (props) => {
 															<Link title={item.title} className={clsx('line-clamp-2 font-weight-bold titleSimilar', id == item.id && 'text-orange')} to={`/movie/${item.id + '-' + urlToSlug(item.title)}`}>{item.title}</Link>
 															<p className='mb-0'>{handleDate(item.release_date)}</p>
 															<StarRating maximum={5} stars={Math.round(item.vote_average / 2)} extraText={` (${item.vote_count.toLocaleString()} votes)`} />
-															<Link to={`/movie/${item.id + '-' + urlToSlug(item.title)}/watch`}><button className='p-2 mt-2'>Watch Now</button></Link>
+															<Link to={`/movie/${item.id + '-' + urlToSlug(item.title)}/watch`}><button className='p-2 mt-2'>&#9654; Watch Now</button></Link>
 														</div>
 													</div>
 												)
@@ -157,7 +165,7 @@ const Watch = (props) => {
 										<div className='episodes'>
 											{movie.seasons.map((item, index) => (
 												<Fragment key={item.season_number}>
-													<div className="season" onClick={() => (opened === item.season_number ? setOpened(undefined) : setOpened(item.season_number))}>
+													<div style={season()} className="season" onClick={() => (opened === item.season_number ? setOpened(undefined) : setOpened(item.season_number))}>
 														<div className="image">
 															<div className='h-100' style={{ backgroundColor: "#dbdbdb" }}>
 																<img className="w-100 h-100" src={imageResize(item.poster_path, "w92")} alt="" loading='lazy'
@@ -187,7 +195,7 @@ const Watch = (props) => {
 															<motion.div initial={{ height: 0 }} animate={{ height: "auto", transition: { duration: 0.3 } }} exit={{ height: 0 }} className="drop">
 																{item.episodes.map((child, index2) => (
 																	<a>
-																		<div key={child.episode_number} className="child" onClick={() => setEpisode({ episode: child.episode_number, season: item.season_number, indexSeason: index, indexEpisode: index2 })}>
+																		<div style={{ background: theme === 'dark' && '#111111' }} key={child.episode_number} className="child" onClick={() => setEpisode({ episode: child.episode_number, season: item.season_number, indexSeason: index, indexEpisode: index2 })}>
 																			<div className='img'>
 																				<img src={imageResize(child.still_path, "w300")} alt="" loading='lazy'
 																					onError={({ currentTarget }) => {

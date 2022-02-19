@@ -1,7 +1,7 @@
 const Error = () => {
   return (
     <div
-      class="main text-center display-4 font-weight-bold"
+      className="main text-center display-4 font-weight-bold"
       style={{
         position: "absolute",
         top: "50%",
@@ -9,8 +9,8 @@ const Error = () => {
         transform: "translate(-50%,-50%",
       }}
     >
-      <div class="not-found">
-        <div class="not-found__404">
+      <div className="not-found">
+        <div className="not-found__404">
           <span>4</span>
           <svg
             stroke="currentColor"
@@ -25,7 +25,7 @@ const Error = () => {
           </svg>
           <span>4</span>
         </div>
-        <span class="not-found__title">PAGE NOT FOUND</span>
+        <span className="not-found__title">PAGE NOT FOUND</span>
       </div>
     </div>
   );

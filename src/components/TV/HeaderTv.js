@@ -143,6 +143,7 @@ const HeaderTv = (props) => {
                     background="#0E0E0E"
                     width={300}
                     height={450}
+                    rounded={false}
                   />
                   <h3 className="w-100 text-center watch mb-0"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
                 </div>

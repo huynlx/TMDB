@@ -70,6 +70,7 @@ const VideosResults = ({ params, data, options, mediaType }) => {
           backgroundColor:
             theme.darkmode === "dark" ? "#333333" : `rgba(${color.backdrop},1)`,
           color: theme.darkmode === "dark" ? "white" : color.text,
+          borderBottom: document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light" ? "1px solid #d7d7d7" : "none"
         }}
       >
         <Typography variant="h6">Videos</Typography>
@@ -91,41 +92,41 @@ const VideosResults = ({ params, data, options, mediaType }) => {
       >
         {mediaType === "movie"
           ? allTabs.map((tab) => (
-              <Tab
-                key={tab.type}
-                component={Link}
-                to={`/movie/${data.id}-${data.title}/videos/${tab.type}`}
-                selected={tab.type === type}
-                value={tab.type}
-                className={classes.tab}
-                label={
-                  <Typography className={classes.label}>
-                    {tab.label}
-                    <span className={classes.span}>
-                      {tab.total_results.toLocaleString()}
-                    </span>
-                  </Typography>
-                }
-              ></Tab>
-            ))
+            <Tab
+              key={tab.type}
+              component={Link}
+              to={`/movie/${data.id}-${data.title}/videos/${tab.type}`}
+              selected={tab.type === type}
+              value={tab.type}
+              className={classes.tab}
+              label={
+                <Typography className={classes.label}>
+                  {tab.label}
+                  <span className={classes.span}>
+                    {tab.total_results.toLocaleString()}
+                  </span>
+                </Typography>
+              }
+            ></Tab>
+          ))
           : allTabsTv.map((tab) => (
-              <Tab
-                key={tab.type}
-                component={Link}
-                to={`/tv/${data.id}-${data.title}/videos/${tab.type}`}
-                selected={tab.type === type}
-                value={tab.type}
-                className={classes.tab}
-                label={
-                  <Typography className={classes.label}>
-                    {tab.label}
-                    <span className={classes.span}>
-                      {tab.total_results.toLocaleString()}
-                    </span>
-                  </Typography>
-                }
-              ></Tab>
-            ))}
+            <Tab
+              key={tab.type}
+              component={Link}
+              to={`/tv/${data.id}-${data.title}/videos/${tab.type}`}
+              selected={tab.type === type}
+              value={tab.type}
+              className={classes.tab}
+              label={
+                <Typography className={classes.label}>
+                  {tab.label}
+                  <span className={classes.span}>
+                    {tab.total_results.toLocaleString()}
+                  </span>
+                </Typography>
+              }
+            ></Tab>
+          ))}
       </Tabs>
     </Card>
   );
