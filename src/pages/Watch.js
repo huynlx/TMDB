@@ -36,8 +36,8 @@ const Watch = (props) => {
 	const [opened, setOpened] = useState(undefined);
 	const [episode, setEpisode] = useState({
 		episode: 1,
-		season: 1,
-		indexSeason: 1,
+		season: 0,
+		indexSeason: 0,
 		indexEpisode: 0
 	});
 	const id = props.match.params.id;
@@ -65,6 +65,11 @@ const Watch = (props) => {
 		!first && NProgress.start();
 		const func = (id) => type === 'movie' ? fetchMovie(id) : fetchTv(id);
 		func(id).then((res) => {
+			setEpisode({
+				...episode,
+				season: res.seasons[0].season_number,
+				episode: res.seasons[0].episodes[0].episode_number
+			})
 			setTop({
 				title: res.title ?? res.name,
 				poster_path: res.poster_path,
@@ -77,7 +82,7 @@ const Watch = (props) => {
 	}, [id])
 
 	console.log(movie);
-	console.log(episode);
+	// console.log(episode);
 
 	const linkStyle = () => {
 		const root = document.documentElement;
