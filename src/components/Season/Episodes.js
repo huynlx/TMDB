@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import handleDate from '../../helpers/handleDate';
 import { no_poster } from '../../assets';
 
 
-const Episodes = ({ data }) => {
-  // console.log(data);
+const Episodes = ({ data, slug }) => {
 
   return (
     <div className='episode'>
       <h4>Episodes <span>{data.episode_count}</span></h4>
       {
-        data.episodes.map(item => (
-          <div className='card' key={item.id}>
+        data.episodes.map((item, index) => (
+          <div className='cardItem' key={item.id}>
             <div className='wrapped' key={item.id}>
               <div className='wrapImg'>
                 <img src={item.still_path} alt="" loading='lazy'
@@ -33,7 +32,15 @@ const Episodes = ({ data }) => {
               </div>
             </div>
             <div className='expand'>
-              <p className='mb-0'>&#9654; &nbsp;Watch Now</p>
+              <p className='mb-0'><Link to={{
+                pathname: `/tv/${slug.id}-${slug.title}/watch`,
+                query: {
+                  episode: item.episode_number,
+                  season: data.season_number,
+                  indexSeason: data.index_season,
+                  indexEpisode: index
+                }
+              }}>&#9654; &nbsp;Watch Now</Link></p>
             </div>
           </div>
         ))

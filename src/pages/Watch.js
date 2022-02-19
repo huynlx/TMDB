@@ -35,13 +35,12 @@ const StarRating = ({ stars = 0, maximum, extraText = "" }) => {
 const Watch = (props) => {
 	const [opened, setOpened] = useState(undefined);
 	const [episode, setEpisode] = useState({
-		episode: 1,
-		season: 0,
-		indexSeason: 0,
-		indexEpisode: 0
+		episode: props.location.query ? props.location.query.episode : 1,
+		season: props.location.query ? props.location.query.season : 0,
+		indexSeason: props.location.query ? props.location.query.indexSeason : 0,
+		indexEpisode: props.location.query ? props.location.query.indexEpisode : 0
 	});
 	const id = props.match.params.id;
-	const [first, setFirst] = useState(true);
 	const title = props.match.params.title;
 	const [movie, setMovie] = useState(null);
 	const [top, setTop] = useState(null);
@@ -53,19 +52,18 @@ const Watch = (props) => {
 	}
 
 	useEffect(() => {
-		!first && NProgress.start();
+		NProgress.start();
 		// window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-		setFirst(false);
 		NProgress.done();
 	}, [episode])
 
 	useEffect(() => {
 		NProgress.configure({ showSpinner: false });
 		NProgress.configure({ trickleRate: 0.1, trickleSpeed: 100 });
-		!first && NProgress.start();
+		NProgress.start();
 		const func = (id) => type === 'movie' ? fetchMovie(id) : fetchTv(id);
 		func(id).then((res) => {
-			setEpisode({
+			(type == 'tv' && !props.location.query) && setEpisode({
 				...episode,
 				season: res.seasons[0].season_number,
 				episode: res.seasons[0].episodes[0].episode_number
@@ -76,13 +74,9 @@ const Watch = (props) => {
 				date: res.release_date ?? res.first_air_date
 			});
 			setMovie(res);
-			setFirst(false);
 			NProgress.done();
 		});
 	}, [id])
-
-	console.log(movie);
-	// console.log(episode);
 
 	const linkStyle = () => {
 		const root = document.documentElement;
@@ -141,6 +135,8 @@ const Watch = (props) => {
 																<img className='img-fluid easeload' width={100} src={item.poster_path} alt="" loading='lazy'
 																	onLoad={({ currentTarget }) => {
 																		currentTarget.style.opacity = 1;
+																		currentTarget.style.transform = currentTarget.src.includes('no_poster') && 'scale(0.5)';
+																		currentTarget.style.objectFit = currentTarget.src.includes('no_poster') && 'contain';
 																	}}
 																/>
 															</div>
@@ -157,7 +153,7 @@ const Watch = (props) => {
 										</div>
 									</>) : (
 									<>
-										<h4 className='font-weight-bold pb-2'>Other episodes</h4>
+										<h4 className='font-weight-bold pb-2' onMouseOver={({ currentTarget }) => currentTarget.style.color = '#7f7f7f'}><Link to={`/tv/${id}-${title}/seasons`}>Seasons</Link></h4>
 										<div className='episodes'>
 											{movie.seasons.map((item, index) => (
 												<Fragment key={item.season_number}>

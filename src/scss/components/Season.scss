@@ -28,6 +28,7 @@
     .container {
         max-width: 1300px;
         padding: 15px 30px;
+        min-height: 30vh;
         .line-clamp-3 {
             -webkit-line-clamp: 3;
             overflow: hidden;
@@ -46,7 +47,7 @@
                     opacity: 0.6;
                 }
             }
-            .card {
+            .cardItem {
                 margin-bottom: 2rem;
                 border: 1px solid #e3e3e3;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -121,7 +122,7 @@
         .container {
             padding: 0px 15px;
             .episode {
-                .card {
+                .cardItem {
                     .wrapped {
                         flex-direction: column;
                         .root {
@@ -150,16 +151,16 @@
 
 @include responsive_320 {
     @include responsive();
-    #season.main .container .episode .card .wrapped img {
+    #season.main .container .episode .cardItem .wrapped img {
         width: 100%;
         max-width: initial;
         max-height: initial;
         height: auto;
     }
-    #season.main .container .episode .card .wrapped .root {
+    #season.main .container .episode .cardItem .wrapped .root {
         padding: 10px;
     }
-    #season.main .container .episode .card .wrapped .wrapImg {
+    #season.main .container .episode .cardItem .wrapped .wrapImg {
         max-width: initial;
         height: initial;
     }
@@ -167,16 +168,16 @@
 
 @include responsive_375 {
     @include responsive();
-    #season.main .container .episode .card .wrapped img {
+    #season.main .container .episode .cardItem .wrapped img {
         width: 100%;
         max-width: initial;
         max-height: initial;
         height: auto;
     }
-    #season.main .container .episode .card .wrapped .root {
+    #season.main .container .episode .cardItem .wrapped .root {
         padding: 10px;
     }
-    #season.main .container .episode .card .wrapped .wrapImg {
+    #season.main .container .episode .cardItem .wrapped .wrapImg {
         max-width: initial;
         height: initial;
     }
@@ -184,16 +185,16 @@
 
 @include responsive_425 {
     @include responsive();
-    #season.main .container .episode .card .wrapped img {
+    #season.main .container .episode .cardItem .wrapped img {
         width: 100%;
         max-width: initial;
         max-height: initial;
         height: auto;
     }
-    #season.main .container .episode .card .wrapped .root {
+    #season.main .container .episode .cardItem .wrapped .root {
         padding: 10px;
     }
-    #season.main .container .episode .card .wrapped .wrapImg {
+    #season.main .container .episode .cardItem .wrapped .wrapImg {
         max-width: initial;
         height: initial;
     }
@@ -201,14 +202,14 @@
 
 @include responsive_768 {
     @include responsive();
-    #season.main .container .episode .card .wrapped {
+    #season.main .container .episode .cardItem .wrapped {
         flex-direction: row;
     }
-    #season.main .container .episode .card .wrapped .root h5 {
+    #season.main .container .episode .cardItem .wrapped .root h5 {
         // display: block;
         margin-bottom: 0.5rem;
     }
-    #season.main .container .episode .card .wrapped .root p {
+    #season.main .container .episode .cardItem .wrapped .root p {
         display: -webkit-box;
         -webkit-line-clamp: 2;
     }
@@ -216,10 +217,10 @@
 
 @include responsive_992 {
     @include responsive();
-    #season.main .container .episode .card .wrapped {
+    #season.main .container .episode .cardItem .wrapped {
         flex-direction: row;
     }
-    #season.main .container .episode .card .wrapped .root h5 {
+    #season.main .container .episode .cardItem .wrapped .root h5 {
         display: block;
         margin-bottom: 0.5rem;
         span {

@@ -109,11 +109,12 @@ export const fetchTv = async (id) => {
         }))
         : "This posters is unavailable",
     },
-    seasons: await Promise.all(data.seasons.map(async (season) => {
+    seasons: await Promise.all(data.seasons.map(async (season, index) => {
       return {
         ...season,
         episodes: await fetchSeasonsDataEpisodes(id, season.season_number),
         poster_path: IMAGE_URL + POSTER_SIZE + season.poster_path,
+        index_season: index
       }
     }))
   };

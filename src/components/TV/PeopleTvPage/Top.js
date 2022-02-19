@@ -22,7 +22,7 @@ const Top = (props) => {
     >
       <div className="container">
         <div className="header">
-          <Link to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/season/${props.data.seasonnumber}`}`}>
+          <Link to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber ? `/season/${props.data.seasonnumber}` : ''}`}>
             <div className="wrapImg">
               <img
                 src={props.url.poster_path}
@@ -38,6 +38,8 @@ const Top = (props) => {
                 }}
                 onLoad={({ currentTarget }) => {
                   currentTarget.style.opacity = 1;
+                  currentTarget.style.transform = currentTarget.src.includes(no_poster) ? 'scale(0.5)' : 'scale(1)';
+                  currentTarget.style.objectFit = currentTarget.src.includes(no_poster) ? 'contain' : 'cover';
                 }}
               />
             </div>
@@ -55,7 +57,7 @@ const Top = (props) => {
             <h4 className="display-5">
               <Link
                 style={{ color: "inherit" }}
-                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/season/${props.data.seasonnumber}`}`}
+                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber ? `/season/${props.data.seasonnumber}` : ''}`}
               >
                 {props.url.title}
               </Link>
@@ -68,10 +70,10 @@ const Top = (props) => {
             <h3>
               <Link
                 style={{ color: "inherit" }}
-                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber && `/seasons`}`}
+                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber ? `/seasons` : ''}`}
               >
                 {
-                  props.data.seasonnumber ? '← Back to season list' : '← Back to main'
+                  props.data.seasonnumber >= 0 ? '← Back to season list' : '← Back to main'
                 }
               </Link>
             </h3>

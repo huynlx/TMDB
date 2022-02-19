@@ -18,6 +18,7 @@ export const handleDate = (date) => {
   return dt.format("DD/MM/YYYY");
 };
 export const handleDate2 = (date) => {
+  if(!date) return ' —';
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("YYYY");
 };

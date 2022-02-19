@@ -31,13 +31,13 @@ const Index = ({ props }) => {
 
   const nextSeasonNumber = () => {
     setSeasonNumber(Number(seasonnumber) + 1);
-    setSeasonIndex(seasons.findIndex(item => item.season_number == seasonnumber + 1));
-    navigate.push(`/tv/${id}-${title}/season/${seasonnumber + 1}`);
+    setSeasonIndex(seasons.findIndex(item => item.season_number == Number(seasonnumber) + 1));
+    navigate.push(`/tv/${id}-${title}/season/${Number(seasonnumber) + 1}`);
   }
   const prevSeasonNumber = () => {
     setSeasonNumber(Number(seasonnumber) - 1);
-    setSeasonIndex(seasons.findIndex(item => item.season_number == seasonnumber - 1))
-    navigate.push(`/tv/${id}-${title}/season/${seasonnumber - 1}`);
+    setSeasonIndex(seasons.findIndex(item => item.season_number == Number(seasonnumber) - 1))
+    navigate.push(`/tv/${id}-${title}/season/${Number(seasonnumber) - 1}`);
   }
 
 
@@ -71,8 +71,8 @@ const Index = ({ props }) => {
         </div>
       </div>
       <div className='main' id='season'>
-        <div className="container" style={{ padding: seasons.length < 2 && '20px 30px 10px 30px' }}>
-          <Episodes data={dt} />
+        <div className="container">
+          <Episodes data={dt} slug={data}/>
         </div>
       </div>
       <Footer></Footer>
