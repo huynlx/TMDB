@@ -103,4 +103,5 @@ a:hover {
 main{
   background:var(--bg-main);
   min-height: 95vh;
+  position: relative;
 }
