@@ -111,14 +111,16 @@ const Watch = (props) => {
 							</div>
 							<div className='infoWatch mt-3'>
 								<h4 className='mt-0 font-weight-bold'><Link to={`/${type}/${id}-${title}`}>{movie.title ?? movie.name}</Link></h4>
-								<ul>
+								<ul className='mb-1'>
 									{
-										movie.genres.map(genre => <Link to={{
-											pathname: `/genre/${genre.id}-${urlToSlug(genre.name)}/${type}`,
-											query: {
-												name: genre.name,
-											}
-										}} className='mr-2 genre' style={linkStyle()}>{genre.name}</Link>)
+										movie.genres.map(genre => (
+											<Link to={{
+												pathname: `/genre/${genre.id}-${urlToSlug(genre.name)}/${type}`,
+												query: {
+													name: genre.name,
+												}
+											}} className='mr-2 genre' style={linkStyle()}>{genre.name}</Link>
+										))
 									}
 								</ul>
 								{

@@ -470,14 +470,32 @@
       }
     }
   }
+  .creditDetails .container .row .col-xl-9 .cast,
+  .recommendations,.portfolio {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 @include responsive_375 {
   @include responsiveSlide();
+  .creditDetails .container .row .col-xl-9 .cast,
+  .recommendations,.portfolio {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 @include responsive_425 {
   @include responsiveSlide();
+  .creditDetails .container .row .col-xl-9 .cast,
+  .recommendations,.portfolio {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 @include responsive_768 {
@@ -486,6 +504,12 @@
     .container {
       padding-left: 20px;
       padding-right: 20px;
+    }
+  }
+  .creditDetails .container .row .col-xl-9 .cast,
+  .recommendations,.portfolio {
+    &::after {
+      display: none;
     }
   }
 }

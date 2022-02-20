@@ -43,6 +43,7 @@
                     border-radius: 30px;
                     padding: 0.1rem 0.5rem 0.3rem 0.5rem;
                     transition: all 0.5s;
+                    height: 30px;
                 }
                 .genre:hover {
                     background-color: var(--bgGenre);
@@ -53,6 +54,11 @@
                     &:hover {
                         color: #7f7f7f;
                     }
+                }
+                ul{
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    display: flex;
                 }
             }
         }

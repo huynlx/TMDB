@@ -103,11 +103,7 @@
               position: absolute;
               top: 0;
               right: 0;
-              background-image: linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0) 0%,
-                var(--scrollBar) 100%
-              );
+              background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
               z-index: 999;
               will-change: opacity;
               pointer-events: none;
@@ -270,20 +266,32 @@
 //mobile
 @include responsive_320 {
   @include responsive();
+  .person .container .row .col-md-9 .details .knowFor::after {
+    display: none;
+  }
 }
 
 @include responsive_375 {
   @include responsive();
+  .person .container .row .col-md-9 .details .knowFor::after {
+    display: none;
+  }
 }
 
 @include responsive_425 {
   @include responsive();
+  .person .container .row .col-md-9 .details .knowFor::after {
+    display: none;
+  }
 }
 
 @include responsive_768 {
   @include responsive();
   .person .container .row .col-md-9 {
     padding-left: 2rem !important;
+  }
+  .person .container .row .col-md-9 .details .knowFor::after {
+    display: none;
   }
 }
 

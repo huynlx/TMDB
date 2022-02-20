@@ -8,21 +8,21 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": [ //nếu định dạng format ko khớp thì eslint sẽ đẩy ra thông báo
-      "warn", //warn => cảnh báo lỗi (app vẫn chạy), error => cảnh báo lỗi (app ko chạy được cho đến khi sửa hết lỗi), nếu ko dùng fix đc thì đổi warn thành error rồi chạy lại server(npm start) xong chạy lại fix
-      {
-        // "arrowParens": "avoid",
-        // "semi": false,
-        // "trailingComma": "none",
-        "endOfLine": "auto" //cuối dòng lệnh phải có dấu ';'
-        // "tabWidth": 2,
-        // "printWidth": 80,
-        // "useTabs": false
-      },
-      {
-        "usePrettierrc": true
-      }
-    ],
+    // "prettier/prettier": [ //nếu định dạng format ko khớp thì eslint sẽ đẩy ra thông báo
+    //   "warn", //warn => cảnh báo lỗi (app vẫn chạy), error => cảnh báo lỗi (app ko chạy được cho đến khi sửa hết lỗi), nếu ko dùng fix đc thì đổi warn thành error rồi chạy lại server(npm start) xong chạy lại fix
+    //   {
+    //     // "arrowParens": "avoid",
+    //     // "semi": false,
+    //     // "trailingComma": "none",
+    //     "endOfLine": "auto" //cuối dòng lệnh phải có dấu ';'
+    //     // "tabWidth": 2,
+    //     // "printWidth": 80,
+    //     // "useTabs": false
+    //   },
+    //   {
+    //     "usePrettierrc": true
+    //   }
+    // ],
     "no-console": "off" //nếu có console.log() thì sẽ báo lỗi, off (ko làm gì cả)
   }
 }
