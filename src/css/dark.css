@@ -1,6 +1,7 @@
 html[data-theme="dark"] {
   --color: #fff;
-  --background-color: #202020;
+  /* --background-color: #202020; */
+  --background-color:#032541;
   --textColor: #fff;
   --textColor2: #ddd;
   --rootColor: #313131;
@@ -16,4 +17,5 @@ html[data-theme="dark"] {
   --as: gray;
   --img: #111111;
   --loadSlider: #313131;
+  --bg-main:#202020;
 }

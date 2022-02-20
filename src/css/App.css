@@ -99,3 +99,8 @@ a:hover {
 .popover-body {
   padding: 0.5rem 0rem;
 }
+
+main{
+  background:var(--bg-main);
+  min-height: 95vh;
+}

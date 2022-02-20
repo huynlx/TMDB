@@ -230,7 +230,7 @@ const HeaderTv = (props) => {
                   </BootstrapTooltip>
                   {(isAdding2 === tv.id || isRemoving2 === tv.id) && (
                     <CircularProgress
-                      size={47}
+                      size={isMobileDevice ? 39 : 47}
                       className={classes.fabProgress}
                     />
                   )}
@@ -277,7 +277,7 @@ const HeaderTv = (props) => {
                   </BootstrapTooltip>
                   {(isAdding || isRemoving === tv.id) && (
                     <CircularProgress
-                      size={47}
+                      size={isMobileDevice ? 39 : 47}
                       className={classes.fabProgress}
                     />
                   )}

@@ -1,6 +1,7 @@
 html[data-theme="light"] {
   --color: #000;
-  --background-color: #fff;
+  /* --background-color: #fff; */
+  --background-color: #032541;
   --textColor: #000;
   --textColor2: rgba(0, 0, 0, 0.6);
   --rootColor: white;
@@ -16,4 +17,5 @@ html[data-theme="light"] {
   --as: rgba(0, 0, 0, 0.5);
   --img: #dbdbdb;
   --loadSlider: #e0e0e0;
+  --bg-main:#fff;
 }

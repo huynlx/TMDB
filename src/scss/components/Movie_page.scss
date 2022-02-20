@@ -19,16 +19,19 @@ div.main {
         padding-top: 30px;
         padding-bottom: 30px;
         // max-width: 300px;
-        img {
-          border-radius: 8px 8px 8px 8px;
-          min-width: 300px;
-          width: 300px;
-          height: 450px;
-          // background-color: #dbdbdb;
+        div {
+          width: fit-content;
+          margin: auto;
+          img {
+            border-radius: 8px 8px 8px 8px;
+            min-width: 300px;
+            width: 300px;
+            height: 450px;
+            // background-color: #dbdbdb;
+          }
         }
         .watch {
           border-radius: 0px 0px 8px 8px;
-          min-width: 300px;
           background-color: #032541;
           font-weight: 600;
           font-size: 1em;
@@ -105,12 +108,14 @@ div.main {
         padding-top: 20px;
         padding-bottom: 7px;
         text-align: center;
-        img {
-          max-width: 170px;
-          min-width: unset;
-          height: 255px;
-          border-radius: $imgBorderRadiusMobile;
-          // max-height: 300px;
+        div {
+          img {
+            max-width: 170px;
+            min-width: unset;
+            height: 255px;
+            border-radius: $imgBorderRadiusMobile;
+            // max-height: 300px;
+          }
         }
       }
       .col-md {

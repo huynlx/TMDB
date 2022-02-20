@@ -270,7 +270,7 @@ const HeaderMovie = (props) => {
                   </BootstrapTooltip>
                   {(isAdding2 === movie.id || isRemoving2 === movie.id) && (
                     <CircularProgress
-                      size={47}
+                      size={isMobileDevice ? 39 : 47}
                       className={classes.fabProgress}
                     />
                   )}
@@ -316,7 +316,7 @@ const HeaderMovie = (props) => {
                   </BootstrapTooltip>
                   {(isAdding || isRemoving === movie.id) && (
                     <CircularProgress
-                      size={47}
+                      size={isMobileDevice ? 39 : 47}
                       className={classes.fabProgress}
                     />
                   )}
