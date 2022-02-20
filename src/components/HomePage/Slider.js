@@ -19,6 +19,8 @@ import { makeStyles, Grid, Fade } from "@material-ui/core";
 import CustomDoughnut from "../Doughnut/CustomDoughnut";
 import { no_poster } from "../../assets";
 
+import NProgress from 'nprogress';
+
 const handleDate = (date) => {
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("ll");
@@ -66,6 +68,9 @@ const Slider = (props) => {
   //  Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     if (!firstLoad) {
+      NProgress.configure({ showSpinner: false });
+      NProgress.configure({ trickleRate: 0.2, trickleSpeed: 100 });
+      NProgress.start();
       setLoad(true);
     }
     const getList = setTimeout(
@@ -99,6 +104,7 @@ const Slider = (props) => {
                                 .forEach((item) => {
                                   item.src = item.dataset.src; //1 cái src bị lỗi thôi là nhảy vào catch ngay
                                 });
+                              NProgress.done();
                               setFirstLoad(false);
                               setTimeout(() => setLoad(false), 0);
                             },

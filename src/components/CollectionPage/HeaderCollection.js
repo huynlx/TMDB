@@ -36,7 +36,7 @@ const HeaderCollection = ({ collection, data, data2 }) => {
       >
         <div className="row collection">
           <div className="col-md-12 col-lg-4 col-xl-3 col-12">
-            {<img src={collection.poster_path} alt="" loading="eager" />}
+            <div>{<img src={collection.poster_path} alt="" loading="eager" />}</div>
           </div>
           <div
             className="col-md pl-xl-4 pl-0 mt-xl-0 mt-2"

@@ -10,6 +10,8 @@ import chuyenDoiUrl from "../../../helpers/urlSlug";
 import { no_poster } from "../../../assets";
 import { options } from "../Slider";
 
+import NProgress from 'nprogress';
+
 const Index = (props) => {
   const root = document.documentElement;
   const [firstLoad, setFirstLoad] = useState(true);
@@ -80,7 +82,12 @@ const Index = (props) => {
     });
   }
   useEffect(() => {
-    setFade(false);
+    if (!firstLoad) {
+      NProgress.configure({ showSpinner: false });
+      NProgress.configure({ trickleRate: 0.2, trickleSpeed: 100 });
+      NProgress.start();
+      setFade(false);
+    }
     const fetch = setTimeout(
       async () => {
         await fetchTrailer(type, media_type).then((res) => {
@@ -117,6 +124,7 @@ const Index = (props) => {
                                 .forEach((item) => {
                                   item.src = item.dataset.src;
                                 });
+                              NProgress.done();
                               setFirstLoad(false);
                               setFade(true);
                             },

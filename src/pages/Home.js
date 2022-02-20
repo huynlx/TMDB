@@ -14,6 +14,9 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import { useSelector } from "react-redux";
 
+//nprogress
+import "../css/nprogress.css";
+
 const useStyles = makeStyles((theme) => ({
   selector: {
     display: "none",

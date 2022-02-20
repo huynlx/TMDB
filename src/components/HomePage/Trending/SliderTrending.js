@@ -20,6 +20,8 @@ import CustomDoughnut from "../../Doughnut/CustomDoughnut";
 import { no_poster } from "../../../assets";
 import { loadImage, options } from "../Slider";
 
+import NProgress from 'nprogress';
+
 const handleDate = (date) => {
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("ll");
@@ -48,7 +50,12 @@ const SliderTrending = (props) => {
   const [trending, setTrending] = useState(null);
   //  Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    setLoad(true);
+    if (!firstLoad) {
+      NProgress.configure({ showSpinner: false });
+      NProgress.configure({ trickleRate: 0.2, trickleSpeed: 100 });
+      NProgress.start();
+      setLoad(true);
+    }
     const getList = setTimeout(
       async () => {
         try {
@@ -77,6 +84,7 @@ const SliderTrending = (props) => {
                                   .forEach((item) => {
                                     item.src = item.dataset.src;
                                   });
+                                NProgress.done();
                                 setFirstLoad(false);
                                 setTimeout(() => setLoad(false), 0);
                               },
