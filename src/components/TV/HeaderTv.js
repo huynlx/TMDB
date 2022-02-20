@@ -5,6 +5,7 @@ import {
   Fade,
   CircularProgress,
 } from "@material-ui/core";
+import { IMAGE_URL } from "../../api/Config";
 import ModalVideo from "react-modal-video";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -118,6 +119,23 @@ const HeaderTv = (props) => {
       ") — The Movie Database (TMDb)";
   }, [tv.first_air_date, tv.name]);
 
+  const watchfinal = () => {
+    const watch = Object.keys(tv.watch).length !== 0 ? (tv.watch.US ?? tv.watch[Object.keys(tv.watch)[0]]) : null;
+    const watch2 = watch ? (watch.flatrate ?? watch.buy ?? watch.rent ?? []) : null;
+    if (watch2) {
+      if (watch2.length != 0) {
+        return {
+          logo: watch2[watch2.length - 1].logo_path,
+          name: watch2[watch2.length - 1].provider_name
+        }
+      }
+    }
+    return {
+      logo: null,
+      name: null
+    }
+  }
+
   return (
     <div style={backdropImage}>
       <div
@@ -145,7 +163,17 @@ const HeaderTv = (props) => {
                     height={450}
                     rounded={false}
                   />
-                  <h3 className="w-100 text-center watch mb-0"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
+                  <h3 className="w-100 text-center watch mb-0">
+                    <div className="d-flex justify-content-center align-items-center">
+                      {
+                        watchfinal().logo && <Link to={`${history.location.pathname}/watch`}><img src={IMAGE_URL + 'original' + watchfinal().logo} alt="" title={watchfinal().name} /></Link>
+                      }
+                      <div className={`${watchfinal().logo ? 'align-items-start' : 'align-items-center'}` + ` d-inline-flex flex-column justify-content-center`}>
+                        <h4 className="">Now Streaming</h4>
+                        <Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link>
+                      </div>
+                    </div>
+                  </h3>
                 </div>
               </Fade>
             </div>

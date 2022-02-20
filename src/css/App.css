@@ -102,6 +102,9 @@ a:hover {
 
 main{
   background:var(--bg-main);
-  min-height: 95vh;
-  position: relative;
+  min-height: 92vh;
+}
+
+.form-control{
+  transition:none;
 }

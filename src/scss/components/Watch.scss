@@ -39,11 +39,13 @@
             .infoWatch {
                 height: auto;
                 .genre {
-                    border: 1.5px solid var(--bgGenre);
+                    border: 2px solid var(--bgGenre);
                     border-radius: 30px;
                     padding: 0.1rem 0.5rem 0.3rem 0.5rem;
                     transition: all 0.5s;
                     height: 30px;
+                    line-height: 1.4;
+                    font-weight: 600;
                 }
                 .genre:hover {
                     background-color: var(--bgGenre);

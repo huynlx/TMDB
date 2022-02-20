@@ -17,7 +17,7 @@ export const fetchMovie = async (id) => {
     params: {
       api_key: API_KEY,
       append_to_response:
-        "credits,videos,recommendations,keywords,images,release_dates,similar",
+        "credits,videos,recommendations,keywords,images,release_dates,similar,watch/providers",
       // language: 'vi'
     },
   };
@@ -132,7 +132,10 @@ export const fetchMovie = async (id) => {
             : no_poster
         }
       ))
+    },
+    watch: {
+      ...data['watch/providers'].results
     }
-  };
+  }
   return checkData;
 };

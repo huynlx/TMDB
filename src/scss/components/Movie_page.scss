@@ -29,13 +29,33 @@ div.main {
             height: 450px;
             // background-color: #dbdbdb;
           }
+          h3 {
+            img {
+              width: 36px;
+              height: 36px;
+              min-width: initial;
+              border-radius: 4px;
+              margin-right: 12px;
+            }
+            div{
+              h4 {
+                line-height: 1em;
+                display: block;
+                opacity: 0.8;
+                font-weight: 400;
+                margin: 0;
+                font-size: 1em;
+                color: #fff;
+              }
+            }
+          }
         }
         .watch {
           border-radius: 0px 0px 8px 8px;
           background-color: #032541;
           font-weight: 600;
           font-size: 1em;
-          padding: 1.3rem;
+          padding: 0.8rem;
         }
       }
       .col-md {

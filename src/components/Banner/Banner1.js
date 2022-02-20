@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { memo, useEffect, useRef, useState } from "react";
 import { fetchPopular } from "./../../api/fetchPopular";
 import { useMediaQuery } from "react-responsive";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Banner1 = () => {
   var blank = /^\s*$/; //blank => true, ! => false
@@ -31,9 +33,9 @@ const Banner1 = () => {
   };
   const checkInput = () => {
     if (!chkInput) {
-      return (
-        <h5 style={{ color: "red", fontWeight: "600" }}>Invalid value !</h5>
-      );
+      toast.error("😅 Keyword is required !", {
+        theme: 'colored',
+      })
     }
   };
   useEffect(() => {
@@ -50,9 +52,8 @@ const Banner1 = () => {
     query: "(max-device-width: 991.98px)",
   });
   const backdropImage = {
-    backgroundImage: `url("https://www.themoviedb.org/t/p/${
-      isMobileDevice ? mb : pc
-    }${backdrop}")`,
+    backgroundImage: `url("https://www.themoviedb.org/t/p/${isMobileDevice ? mb : pc
+      }${backdrop}")`,
     // transition: 'background-image 0.5s ease-in-out',
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -93,6 +94,7 @@ const Banner1 = () => {
         )}
         {checkInput()}
       </div>
+      <ToastContainer />
     </div>
   );
 };

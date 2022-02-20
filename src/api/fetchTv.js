@@ -15,7 +15,7 @@ export const fetchTv = async (id) => {
   var requestEN = {
     params: {
       api_key: API_KEY,
-      append_to_response: "credits,videos,recommendations,keywords,images",
+      append_to_response: "credits,videos,recommendations,keywords,images,watch/providers",
     },
   };
   // var requestVI = {
@@ -116,7 +116,10 @@ export const fetchTv = async (id) => {
         poster_path: IMAGE_URL + POSTER_SIZE + season.poster_path,
         index_season: index
       }
-    }))
+    })),
+    watch: {
+      ...data['watch/providers'].results
+    }
   };
   return checkData;
 };

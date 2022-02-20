@@ -6,6 +6,7 @@ import {
   Fade,
   CircularProgress,
 } from "@material-ui/core";
+import { IMAGE_URL } from '../../api/Config';
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useState, useRef, useEffect } from "react";
@@ -129,6 +130,23 @@ const HeaderMovie = (props) => {
       ") — The Movie Database (TMDb)";
   }, [movie.release_date, movie.title]);
 
+  const watchfinal = () => {
+    const watch = Object.keys(movie.watch).length !== 0 ? (movie.watch.US ?? movie.watch[Object.keys(movie.watch)[0]]) : null;
+    const watch2 = watch ? (watch.flatrate ?? watch.buy ?? watch.rent ?? []) : null;
+    if (watch2) {
+      if (watch2.length != 0) {
+        return {
+          logo: watch2[watch2.length - 1].logo_path,
+          name: watch2[watch2.length - 1].provider_name
+        }
+      }
+    }
+    return {
+      logo: null,
+      name: null
+    }
+  }
+
   return (
     <div style={backdropImage}>
       <div
@@ -156,7 +174,17 @@ const HeaderMovie = (props) => {
                     height={450}
                     rounded={false}
                   />
-                  <h3 className="w-100 text-center watch mb-0"><Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link></h3>
+                  <h3 className="w-100 text-center watch mb-0">
+                    <div className="d-flex justify-content-center align-items-center">
+                      {
+                        watchfinal().logo && <Link to={`${history.location.pathname}/watch`}><img src={IMAGE_URL + 'original' + watchfinal().logo} alt="" title={watchfinal().name} /></Link>
+                      }
+                      <div className={`${watchfinal().logo ? 'align-items-start' : 'align-items-center'}` + ` d-inline-flex flex-column justify-content-center`}>
+                        <h4 className="">Now Streaming</h4>
+                        <Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link>
+                      </div>
+                    </div>
+                  </h3>
                 </div>
               </Fade>
             </div>
@@ -349,9 +377,9 @@ const HeaderMovie = (props) => {
                   className="row"
                   style={{ display: "flex", justifyContent: "start" }}
                 >
-                  {movie.credits.crew.slice(0, 6).map((item, key) => {
+                  {movie.credits.crew.slice(0, 6).map((item, index) => {
                     return (
-                      <div key={key} className="col-sm-4 col-6">
+                      <div key={index} className="col-sm-4 col-6">
                         <h6>{item.name}</h6>
                         <p>{item.department}</p>
                       </div>
