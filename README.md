@@ -25,7 +25,7 @@ REACT_APP_YOUTUBE_API_KEY={YourAPIKey}
 - Javascript
 - Bootstrap
 - Material UI
-- SASS
+- Sass
 - Swiper
 - Framer Motion
 - NProgress
