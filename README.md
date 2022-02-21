@@ -4,7 +4,7 @@ Live demo: [https://tmdb-huynh.tk/](https://tmdb-huynh.tk/)
 
 ### Clone project
 
-Register your own TheMovieDatabase account and add the api key to environment variable
+Register your own the tmdb api key to environment variable
 
 ```
 REACT_APP_TMDB_API_KEY={YourAPIKey}
