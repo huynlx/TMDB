@@ -1,4 +1,4 @@
-# TMDB - Popular Movies in one place
+# TMDB - All Movies & Tv Shows in one place
 
 Live demo: [https://tmdb-huynh.tk/](https://tmdb-huynh.tk/)
 
@@ -12,6 +12,10 @@ REACT_APP_TMDB_API_KEY={YourAPIKey}
 Register your own the youtube api key to environment variable
 ```
 REACT_APP_YOUTUBE_API_KEY={YourAPIKey}
+```
+Register your own the firebase api key to environment variable
+```
+REACT_APP_FIREBASE_API_KEY={YourAPIKey}
 ```
 
 ## Preview
