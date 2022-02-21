@@ -9,6 +9,10 @@ Register your own TheMovieDatabase account and add the api key to environment va
 ```
 TMDB_API_KEY={YourAPIKey}
 ```
+Register your own the youtube api key to environment variable
+```
+YOUTUBE_API_KEY={YourAPIKey}
+```
 
 ## Preview
 
@@ -16,9 +20,13 @@ TMDB_API_KEY={YourAPIKey}
 
 ## Dependencies
 
-- Reactjs
+- ReactJS
+- Redux
 - Javascript
 - Bootstrap
+- Material UI
+- SASS
 - Swiper
 - Framer Motion
 - NProgress
+- NodeJS
