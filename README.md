@@ -7,11 +7,11 @@ Live demo: [https://tmdb-huynh.tk/](https://tmdb-huynh.tk/)
 Register your own TheMovieDatabase account and add the api key to environment variable
 
 ```
-TMDB_API_KEY={YourAPIKey}
+REACT_APP_TMDB_API_KEY={YourAPIKey}
 ```
 Register your own the youtube api key to environment variable
 ```
-YOUTUBE_API_KEY={YourAPIKey}
+REACT_APP_YOUTUBE_API_KEY={YourAPIKey}
 ```
 
 ## Preview
@@ -30,3 +30,5 @@ YOUTUBE_API_KEY={YourAPIKey}
 - Framer Motion
 - NProgress
 - NodeJS
+- ExpressJS
+- MongoDB
