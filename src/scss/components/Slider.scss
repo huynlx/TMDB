@@ -153,28 +153,28 @@
 //mobile
 @include responsive_320 {
   @include responsiveSlide();
-  .popular.container .swiper-container::after{
+  .popular.container .swiper-container::after {
     display: none;
   }
 }
 
 @include responsive_375 {
   @include responsiveSlide();
-  .popular.container .swiper-container::after{
+  .popular.container .swiper-container::after {
     display: none;
   }
 }
 
 @include responsive_425 {
   @include responsiveSlide();
-  .popular.container .swiper-container::after{
+  .popular.container .swiper-container::after {
     display: none;
   }
 }
 
 @include responsive_768 {
   @include responsiveSlide();
-  .popular.container .swiper-container::after{
+  .popular.container .swiper-container::after {
     display: none;
   }
 }

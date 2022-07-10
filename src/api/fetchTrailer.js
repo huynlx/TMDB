@@ -23,8 +23,8 @@ export const fetchTrailer = async (type, media_type) => {
                   : no_image,
                 background: item.backdrop_path
                   ? IMAGE_URL +
-                  "w1920_and_h427_multi_faces" +
-                  item.backdrop_path
+                    "w1920_and_h427_multi_faces" +
+                    item.backdrop_path
                   : null,
                 trailer: res.results,
                 title: media_type === "movie" ? item.title : item.name,

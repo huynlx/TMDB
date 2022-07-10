@@ -89,8 +89,9 @@ const HeaderTv = (props) => {
     </>
   );
   const backdropImage = {
-    backgroundImage: `url(${tv.backdrop_path !== no_image ? tv.backdrop_path : null
-      })`,
+    backgroundImage: `url(${
+      tv.backdrop_path !== no_image ? tv.backdrop_path : null
+    })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: isMobileDevice ? "center" : "right -200px top",
@@ -120,21 +121,26 @@ const HeaderTv = (props) => {
   }, [tv.first_air_date, tv.name]);
 
   const watchfinal = () => {
-    const watch = Object.keys(tv.watch).length !== 0 ? (tv.watch.US ?? tv.watch[Object.keys(tv.watch)[0]]) : null;
-    const watch2 = watch ? (watch.flatrate ?? watch.buy ?? watch.rent ?? []) : null;
+    const watch =
+      Object.keys(tv.watch).length !== 0
+        ? tv.watch.US ?? tv.watch[Object.keys(tv.watch)[0]]
+        : null;
+    const watch2 = watch
+      ? watch.flatrate ?? watch.buy ?? watch.rent ?? []
+      : null;
     if (watch2) {
       if (watch2.length != 0) {
         return {
           logo: watch2[watch2.length - 1].logo_path,
-          name: watch2[watch2.length - 1].provider_name
-        }
+          name: watch2[watch2.length - 1].provider_name,
+        };
       }
     }
     return {
       logo: null,
-      name: null
-    }
-  }
+      name: null,
+    };
+  };
 
   return (
     <div style={backdropImage}>
@@ -165,12 +171,32 @@ const HeaderTv = (props) => {
                   />
                   <h3 className="w-100 text-center watch mb-0">
                     <div className="d-flex justify-content-center align-items-center">
-                      {
-                        watchfinal().logo && <Link to={`${history.location.pathname}/watch`}><img src={IMAGE_URL + 'original' + watchfinal().logo} alt="" title={watchfinal().name} /></Link>
-                      }
-                      <div className={`${watchfinal().logo ? 'align-items-start' : 'align-items-center'}` + ` d-inline-flex flex-column justify-content-center`}>
+                      {watchfinal().logo && (
+                        <Link to={`${history.location.pathname}/watch`}>
+                          <img
+                            src={IMAGE_URL + "original" + watchfinal().logo}
+                            alt=""
+                            title={watchfinal().name}
+                          />
+                        </Link>
+                      )}
+                      <div
+                        className={
+                          `${
+                            watchfinal().logo
+                              ? "align-items-start"
+                              : "align-items-center"
+                          }` +
+                          ` d-inline-flex flex-column justify-content-center`
+                        }
+                      >
                         <h4 className="">Now Streaming</h4>
-                        <Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link>
+                        <Link
+                          className="text-white"
+                          to={`${history.location.pathname}/watch`}
+                        >
+                          Watch Now
+                        </Link>
                       </div>
                     </div>
                   </h3>
@@ -200,7 +226,8 @@ const HeaderTv = (props) => {
                 >
                   TV-MA
                 </span>{" "}
-                {tv.genres.length ? genres(tv.genres, 'tv') : "-"}&nbsp; • &nbsp;
+                {tv.genres.length ? genres(tv.genres, "tv") : "-"}&nbsp; •
+                &nbsp;
                 {timeConvert(tv.episode_run_time[0])}{" "}
               </p>
               <div className="doughnut">
@@ -225,8 +252,8 @@ const HeaderTv = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your favorite list"
                           : !isAdded2
-                            ? "Mark as favorite"
-                            : "Remove from your favorite list"}
+                          ? "Mark as favorite"
+                          : "Remove from your favorite list"}
                       </Typography>
                     }
                     arrow
@@ -239,8 +266,8 @@ const HeaderTv = (props) => {
                         !isAuth
                           ? null
                           : !isAdded2
-                            ? () => handleAddTv(addMovie2)
-                            : () => dispatch(removeMovie2(tv.id))
+                          ? () => handleAddTv(addMovie2)
+                          : () => dispatch(removeMovie2(tv.id))
                       }
                     >
                       <FavoriteIcon
@@ -273,8 +300,8 @@ const HeaderTv = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your watchlist"
                           : !isAdded
-                            ? "Add to your watchlist"
-                            : "Remove from your watchlist"}
+                          ? "Add to your watchlist"
+                          : "Remove from your watchlist"}
                       </Typography>
                     }
                     arrow
@@ -287,8 +314,8 @@ const HeaderTv = (props) => {
                         !isAuth
                           ? null
                           : !isAdded
-                            ? () => handleAddTv(addMovie)
-                            : () => dispatch(removeMovie(tv.id))
+                          ? () => handleAddTv(addMovie)
+                          : () => dispatch(removeMovie(tv.id))
                       }
                     >
                       <BookmarkIcon

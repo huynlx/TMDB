@@ -32,7 +32,11 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
+            background-image: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0) 0%,
+              var(--scrollBar) 100%
+            );
             z-index: 999;
             will-change: opacity;
             pointer-events: none;
@@ -207,7 +211,11 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
+            background-image: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0) 0%,
+              var(--scrollBar) 100%
+            );
             z-index: 999;
             will-change: opacity;
             pointer-events: none;
@@ -259,7 +267,11 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--scrollBar) 100%);
+            background-image: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0) 0%,
+              var(--scrollBar) 100%
+            );
             z-index: 999;
             will-change: opacity;
             pointer-events: none;
@@ -471,7 +483,8 @@
     }
   }
   .creditDetails .container .row .col-xl-9 .cast,
-  .recommendations,.portfolio {
+  .recommendations,
+  .portfolio {
     &::after {
       display: none;
     }
@@ -481,7 +494,8 @@
 @include responsive_375 {
   @include responsiveSlide();
   .creditDetails .container .row .col-xl-9 .cast,
-  .recommendations,.portfolio {
+  .recommendations,
+  .portfolio {
     &::after {
       display: none;
     }
@@ -491,7 +505,8 @@
 @include responsive_425 {
   @include responsiveSlide();
   .creditDetails .container .row .col-xl-9 .cast,
-  .recommendations,.portfolio {
+  .recommendations,
+  .portfolio {
     &::after {
       display: none;
     }
@@ -507,7 +522,8 @@
     }
   }
   .creditDetails .container .row .col-xl-9 .cast,
-  .recommendations,.portfolio {
+  .recommendations,
+  .portfolio {
     &::after {
       display: none;
     }

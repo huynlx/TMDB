@@ -19,7 +19,7 @@ export const popularMovie = async (query, page) => {
           ? IMAGE_URL + POSTER_SIZE + movie.poster_path
           : no_poster,
       })),
-      total_pages: 500
+      total_pages: 500,
     };
     return modifiedData;
   } catch (e) {

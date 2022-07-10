@@ -15,10 +15,15 @@ const Top = (props) => {
       className="top"
       style={{
         backgroundColor:
-          document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light"
+          document
+            .getElementsByTagName("HTML")[0]
+            .getAttribute("data-theme") === "light"
             ? `rgba(${color.backdrop},1)`
             : "#2C3132",
-        borderBottom: document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "dark" && "none"
+        borderBottom:
+          document
+            .getElementsByTagName("HTML")[0]
+            .getAttribute("data-theme") === "dark" && "none",
       }}
     >
       <div className="container">
@@ -34,8 +39,8 @@ const Top = (props) => {
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = no_poster;
-                  currentTarget.style.transform = 'scale(0.5)';
-                  currentTarget.style.objectFit = 'contain';
+                  currentTarget.style.transform = "scale(0.5)";
+                  currentTarget.style.objectFit = "contain";
                 }}
                 onLoad={({ currentTarget }) => {
                   currentTarget.style.opacity = 1;
@@ -47,7 +52,9 @@ const Top = (props) => {
             className="ahihi"
             style={{
               color:
-                document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light"
+                document
+                  .getElementsByTagName("HTML")[0]
+                  .getAttribute("data-theme") === "light"
                   ? color.text
                   : "white",
             }}

@@ -1,22 +1,38 @@
 import { useRef, useState } from "react";
 import clsx from "clsx";
 
-function ImageZoom({ zoom, src, alt, background, id, width, height, rounded = true }) {
+function ImageZoom({
+  zoom,
+  src,
+  alt,
+  background,
+  id,
+  width,
+  height,
+  rounded = true,
+}) {
   const key = id;
-  const zoomRef = useRef(zoom.clone({ background }));
+  const zoomRef = useRef(zoom?.clone({ background }));
   const [ImageLoaded, loadImage] = useState({
     id: false,
   });
+
   const ImageLoad = (key) => loadImage({ ...ImageLoaded, [key]: true });
-  function attachZoom(image) {
-    zoomRef.current.attach(image);
+
+  function attachZoom(element) {
+    zoomRef.current.attach(element);
   }
+
   return (
     <img
-      style={{ zIndex: "999", borderBottomLeftRadius: !rounded && '0', borderBottomRightRadius: !rounded && '0' }}
+      style={{
+        zIndex: "999",
+        borderBottomLeftRadius: !rounded && "0",
+        borderBottomRightRadius: !rounded && "0",
+      }}
       src={src}
       alt={alt}
-      ref={attachZoom}
+      ref={zoom && attachZoom}
       onLoad={() => ImageLoad(key)}
       className={clsx(
         "img-fluid medium-zoom-image",

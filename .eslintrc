@@ -1,11 +1,11 @@
 {
   "extends": [
     "react-app",
-    "prettier"
+    "prettier" //=> extend "eslint-config-prettier"
   ],
   "plugins": [
     "react",
-    "prettier"
+    "prettier" //=> plugin "eslint-plugin-prettier"
   ],
   "rules": {
     "prettier/prettier": [

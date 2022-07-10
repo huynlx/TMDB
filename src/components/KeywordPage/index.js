@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 const Index = ({ props }) => {
   const { pathname } = useLocation();
   const genreName = props.location.query?.name ?? null;
-  const type = pathname.includes('tv') ? 'tv' : 'movie';
+  const type = pathname.includes("tv") ? "tv" : "movie";
   const id = props.match.params.id;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,10 @@ const Index = ({ props }) => {
   });
   useEffect(() => {
     const getAPI = async () => {
-      const func = (id, page) => pathname.includes('genre') ? fetchByGenres(id, type, page) : fetchKeyword(id, type, page);
+      const func = (id, page) =>
+        pathname.includes("genre")
+          ? fetchByGenres(id, type, page)
+          : fetchKeyword(id, type, page);
       if (loading) {
         await func(id, page).then((res) => {
           setData(res);

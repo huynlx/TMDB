@@ -46,7 +46,7 @@ const Media = (props) => {
         width: "200px",
         textAlign: "center",
         fontWeight: "normal",
-        fontSize: "1.25rem",
+        fontSize: "1rem",
       }}
     >
       View More <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>

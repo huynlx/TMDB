@@ -6,7 +6,7 @@ import {
   Fade,
   CircularProgress,
 } from "@material-ui/core";
-import { IMAGE_URL } from '../../api/Config';
+import { IMAGE_URL } from "../../api/Config";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useState, useRef, useEffect } from "react";
@@ -30,7 +30,7 @@ import {
   genres,
   BootstrapTooltip,
 } from "./functions";
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory } from "react-router-dom";
 
 const HeaderMovie = (props) => {
   const history = useHistory();
@@ -100,8 +100,9 @@ const HeaderMovie = (props) => {
     </>
   );
   const backdropImage = {
-    backgroundImage: `url(${movie.backdrop_path !== no_image ? movie.backdrop_path : null
-      })`,
+    backgroundImage: `url(${
+      movie.backdrop_path !== no_image ? movie.backdrop_path : null
+    })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: isMobileDevice ? "center" : "right -200px top",
@@ -131,21 +132,26 @@ const HeaderMovie = (props) => {
   }, [movie.release_date, movie.title]);
 
   const watchfinal = () => {
-    const watch = Object.keys(movie.watch).length !== 0 ? (movie.watch.US ?? movie.watch[Object.keys(movie.watch)[0]]) : null;
-    const watch2 = watch ? (watch.flatrate ?? watch.buy ?? watch.rent ?? []) : null;
+    const watch =
+      Object.keys(movie.watch).length !== 0
+        ? movie.watch.US ?? movie.watch[Object.keys(movie.watch)[0]]
+        : null;
+    const watch2 = watch
+      ? watch.flatrate ?? watch.buy ?? watch.rent ?? []
+      : null;
     if (watch2) {
       if (watch2.length != 0) {
         return {
           logo: watch2[watch2.length - 1].logo_path,
-          name: watch2[watch2.length - 1].provider_name
-        }
+          name: watch2[watch2.length - 1].provider_name,
+        };
       }
     }
     return {
       logo: null,
-      name: null
-    }
-  }
+      name: null,
+    };
+  };
 
   return (
     <div style={backdropImage}>
@@ -176,12 +182,32 @@ const HeaderMovie = (props) => {
                   />
                   <h3 className="w-100 text-center watch mb-0">
                     <div className="d-flex justify-content-center align-items-center">
-                      {
-                        watchfinal().logo && <Link to={`${history.location.pathname}/watch`}><img src={IMAGE_URL + 'original' + watchfinal().logo} alt="" title={watchfinal().name} /></Link>
-                      }
-                      <div className={`${watchfinal().logo ? 'align-items-start' : 'align-items-center'}` + ` d-inline-flex flex-column justify-content-center`}>
+                      {watchfinal().logo && (
+                        <Link to={`${history.location.pathname}/watch`}>
+                          <img
+                            src={IMAGE_URL + "original" + watchfinal().logo}
+                            alt=""
+                            title={watchfinal().name}
+                          />
+                        </Link>
+                      )}
+                      <div
+                        className={
+                          `${
+                            watchfinal().logo
+                              ? "align-items-start"
+                              : "align-items-center"
+                          }` +
+                          ` d-inline-flex flex-column justify-content-center`
+                        }
+                      >
                         <h4 className="">Now Streaming</h4>
-                        <Link className="text-white" to={`${history.location.pathname}/watch`}>Watch Now</Link>
+                        <Link
+                          className="text-white"
+                          to={`${history.location.pathname}/watch`}
+                        >
+                          Watch Now
+                        </Link>
                       </div>
                     </div>
                   </h3>
@@ -217,8 +243,8 @@ const HeaderMovie = (props) => {
                   &nbsp;{" "}
                   {movie.iso_3166_1 !== "" && <span>({movie.iso_3166_1})</span>}
                   &nbsp; •&nbsp;{" "}
-                  {movie.genres.length ? genres(movie.genres, "movie") : "-"}&nbsp; •
-                  &nbsp;{timeConvert(movie.runtime)}{" "}
+                  {movie.genres.length ? genres(movie.genres, "movie") : "-"}
+                  &nbsp; • &nbsp;{timeConvert(movie.runtime)}{" "}
                 </p>
               ) : (
                 <>
@@ -242,7 +268,7 @@ const HeaderMovie = (props) => {
                     &nbsp; • &nbsp;{timeConvert(movie.runtime)}
                   </p>
                   <p className="center">
-                    {movie.genres.length ? genres(movie.genres, 'movie') : "-"}
+                    {movie.genres.length ? genres(movie.genres, "movie") : "-"}
                   </p>
                 </>
               )}
@@ -267,8 +293,8 @@ const HeaderMovie = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your favorite list"
                           : !isAdded2
-                            ? "Mark as favorite"
-                            : "Remove from your favorite list"}
+                          ? "Mark as favorite"
+                          : "Remove from your favorite list"}
                       </Typography>
                     }
                     className={classes.tooltip}
@@ -279,8 +305,8 @@ const HeaderMovie = (props) => {
                         !isAuth
                           ? null
                           : !isAdded2
-                            ? () => handleAddMovie(addMovie2)
-                            : () => dispatch(removeMovie2(movie.id))
+                          ? () => handleAddMovie(addMovie2)
+                          : () => dispatch(removeMovie2(movie.id))
                       }
                     >
                       <FavoriteIcon
@@ -312,8 +338,8 @@ const HeaderMovie = (props) => {
                         {!isAuth
                           ? "Login to add this movie to your watchlist"
                           : !isAdded
-                            ? "Add to your watchlist"
-                            : "Remove from your watchlist"}
+                          ? "Add to your watchlist"
+                          : "Remove from your watchlist"}
                       </Typography>
                     }
                     className={classes.tooltip}
@@ -324,8 +350,8 @@ const HeaderMovie = (props) => {
                         !isAuth
                           ? null
                           : !isAdded
-                            ? () => handleAddMovie(addMovie)
-                            : () => dispatch(removeMovie(movie.id))
+                          ? () => handleAddMovie(addMovie)
+                          : () => dispatch(removeMovie(movie.id))
                       }
                     >
                       {" "}

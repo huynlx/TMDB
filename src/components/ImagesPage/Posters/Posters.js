@@ -70,15 +70,17 @@ const Posters = ({ theme }) => {
     <Div>
       {posters.map((image, key) => (
         <Img key={key}>
-          <ImageZoom
-            src={image.url_original}
-            alt="Zoom"
-            zoom={zoom.current}
-            background="#0E0E0E"
-            id={key}
-            width={208}
-            height={312}
-          />
+          <a href={image.url_original} target="_blank">
+            <ImageZoom
+              src={image.url}
+              alt="Zoom"
+              // zoom={zoom.current}
+              background="#0E0E0E"
+              id={key}
+              width={208}
+              height={312}
+            />
+          </a>
           <Root theme={theme}>
             <span style={{ fontSize: "14px", fontWeight: "bold" }}>Size</span>
             <br />

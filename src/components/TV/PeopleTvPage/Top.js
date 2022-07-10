@@ -15,15 +15,32 @@ const Top = (props) => {
       className="top"
       style={{
         backgroundColor:
-          document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light"
+          document
+            .getElementsByTagName("HTML")[0]
+            .getAttribute("data-theme") === "light"
             ? `rgba(${color.backdrop},1)`
             : "#2C3132",
-        borderBottom: document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "dark" && "none"
+        borderBottom:
+          document
+            .getElementsByTagName("HTML")[0]
+            .getAttribute("data-theme") === "dark" && "none",
       }}
     >
       <div className="container">
         <div className="header">
-          <Link to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber ? `/season/${props.data.seasonnumber}` : ''}`}>
+          <Link
+            to={
+              "/tv/" +
+              props.data.id +
+              "-" +
+              props.data.title +
+              `${
+                props.data.seasonnumber
+                  ? `/season/${props.data.seasonnumber}`
+                  : ""
+              }`
+            }
+          >
             <div className="wrapImg">
               <img
                 src={props.url.poster_path}
@@ -34,13 +51,21 @@ const Top = (props) => {
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = no_poster;
-                  currentTarget.style.transform = 'scale(0.5)';
-                  currentTarget.style.objectFit = 'contain';
+                  currentTarget.style.transform = "scale(0.5)";
+                  currentTarget.style.objectFit = "contain";
                 }}
                 onLoad={({ currentTarget }) => {
                   currentTarget.style.opacity = 1;
-                  currentTarget.style.transform = currentTarget.src.includes(no_poster) ? 'scale(0.5)' : 'scale(1)';
-                  currentTarget.style.objectFit = currentTarget.src.includes(no_poster) ? 'contain' : 'cover';
+                  currentTarget.style.transform = currentTarget.src.includes(
+                    no_poster
+                  )
+                    ? "scale(0.5)"
+                    : "scale(1)";
+                  currentTarget.style.objectFit = currentTarget.src.includes(
+                    no_poster
+                  )
+                    ? "contain"
+                    : "cover";
                 }}
               />
             </div>
@@ -49,7 +74,9 @@ const Top = (props) => {
             className="ahihi"
             style={{
               color:
-                document.getElementsByTagName("HTML")[0].getAttribute("data-theme") === "light"
+                document
+                  .getElementsByTagName("HTML")[0]
+                  .getAttribute("data-theme") === "light"
                   ? color.text
                   : "white",
             }}
@@ -57,7 +84,17 @@ const Top = (props) => {
             <h4 className="display-5">
               <Link
                 style={{ color: "inherit" }}
-                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber ? `/season/${props.data.seasonnumber}` : ''}`}
+                to={
+                  "/tv/" +
+                  props.data.id +
+                  "-" +
+                  props.data.title +
+                  `${
+                    props.data.seasonnumber
+                      ? `/season/${props.data.seasonnumber}`
+                      : ""
+                  }`
+                }
               >
                 {props.url.title}
               </Link>
@@ -70,11 +107,17 @@ const Top = (props) => {
             <h3>
               <Link
                 style={{ color: "inherit" }}
-                to={"/tv/" + props.data.id + "-" + props.data.title + `${props.data.seasonnumber ? `/seasons` : ''}`}
-              >
-                {
-                  props.data.seasonnumber >= 0 ? '← Back to season list' : '← Back to main'
+                to={
+                  "/tv/" +
+                  props.data.id +
+                  "-" +
+                  props.data.title +
+                  `${props.data.seasonnumber ? `/seasons` : ""}`
                 }
+              >
+                {props.data.seasonnumber >= 0
+                  ? "← Back to season list"
+                  : "← Back to main"}
               </Link>
             </h3>
           </div>

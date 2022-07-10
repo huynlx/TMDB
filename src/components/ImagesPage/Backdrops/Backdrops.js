@@ -62,15 +62,17 @@ const Backdrops = ({ theme }) => {
     <Div>
       {backdrops.map((image, key) => (
         <Img key={key}>
-          <ImageZoom
-            src={image.url_original}
-            alt="Zoom"
-            zoom={zoom.current}
-            background="#0E0E0E"
-            id={key}
-            width={288}
-            height={162}
-          />
+          <a href={image.url_original} target="_blank">
+            <ImageZoom
+              src={image.url}
+              alt="Zoom"
+              // zoom={zoom.current}
+              background="#0E0E0E"
+              id={key}
+              width={288}
+              height={162}
+            />
+          </a>
           <Root theme={theme}>
             <span style={{ fontSize: "14px", fontWeight: "bold" }}>Size</span>
             <br />

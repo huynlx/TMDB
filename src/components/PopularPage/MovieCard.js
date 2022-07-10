@@ -94,8 +94,8 @@ const MovieCard = ({ movie, type, company, search }) => {
                     ? movie.release_date
                     : null
                   : movie.first_air_date
-                    ? movie.first_air_date
-                    : null
+                  ? movie.first_air_date
+                  : null
               )}
             </p>
           )}
@@ -199,8 +199,8 @@ const MovieCard = ({ movie, type, company, search }) => {
                             ? movie.release_date
                             : null
                           : movie.first_air_date
-                            ? movie.first_air_date
-                            : null
+                          ? movie.first_air_date
+                          : null
                       )}
                     </p>
                   )}

@@ -20,7 +20,7 @@ import { no_poster } from "../../../assets";
 import { options } from "../Slider";
 import { loadImage } from "../Slider";
 
-import NProgress from 'nprogress';
+import NProgress from "nprogress";
 
 const handleDate = (date) => {
   let dt = moment(date, "YYYY-MM-DD");

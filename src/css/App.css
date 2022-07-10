@@ -100,11 +100,11 @@ a:hover {
   padding: 0.5rem 0rem;
 }
 
-main{
-  background:var(--bg-main);
+main {
+  background: var(--bg-main);
   min-height: 92vh;
 }
 
-.form-control{
-  transition:none;
+.form-control {
+  transition: none;
 }

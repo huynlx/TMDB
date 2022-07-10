@@ -8,12 +8,26 @@ const MovieCard = ({ value, type }) => {
     .getAttribute("data-theme");
   return (
     <div className="movie" style={{ border: theme === "dark" && "none" }}>
-      <Link to={`/${type ?? 'movie'}/` + value.id + "-" + chuyenDoiUrl(value.title ?? value.name)}>
+      <Link
+        to={
+          `/${type ?? "movie"}/` +
+          value.id +
+          "-" +
+          chuyenDoiUrl(value.title ?? value.name)
+        }
+      >
         <img src={value.poster_path} alt="" />
       </Link>
       <div className="root">
         <div>
-          <Link to={`/${type ?? "movie"}/` + value.id + "-" + chuyenDoiUrl(value.title ?? value.name)}>
+          <Link
+            to={
+              `/${type ?? "movie"}/` +
+              value.id +
+              "-" +
+              chuyenDoiUrl(value.title ?? value.name)
+            }
+          >
             {" "}
             <h6 className="title">{value.title ?? value.name}</h6>
           </Link>

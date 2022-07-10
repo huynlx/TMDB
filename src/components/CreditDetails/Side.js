@@ -70,10 +70,15 @@ const Side = (props) => {
                     >
                       <Link
                         to={{
-                          pathname: "/keyword/" + value.id + "-" + chuyenDoiUrl(value.name) + '/movie',
+                          pathname:
+                            "/keyword/" +
+                            value.id +
+                            "-" +
+                            chuyenDoiUrl(value.name) +
+                            "/movie",
                           query: {
                             name: value.name,
-                          }
+                          },
                         }}
                         style={{
                           textDecoration: "none",

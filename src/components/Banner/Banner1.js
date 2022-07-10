@@ -34,8 +34,8 @@ const Banner1 = () => {
   const checkInput = () => {
     if (!chkInput) {
       toast.error("😅 Keyword is required !", {
-        theme: 'colored',
-      })
+        theme: "colored",
+      });
     }
   };
   useEffect(() => {
@@ -52,8 +52,9 @@ const Banner1 = () => {
     query: "(max-device-width: 991.98px)",
   });
   const backdropImage = {
-    backgroundImage: `url("https://www.themoviedb.org/t/p/${isMobileDevice ? mb : pc
-      }${backdrop}")`,
+    backgroundImage: `url("https://www.themoviedb.org/t/p/${
+      isMobileDevice ? mb : pc
+    }${backdrop}")`,
     // transition: 'background-image 0.5s ease-in-out',
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

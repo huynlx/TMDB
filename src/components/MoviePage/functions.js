@@ -2,7 +2,7 @@ import moment from "moment";
 import { useStylesBootstrap } from "./style";
 import { Tooltip } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import urlSlug from '../../helpers/urlSlug';
+import urlSlug from "../../helpers/urlSlug";
 
 export function timeConvert(n) {
   var num = n;
@@ -13,26 +13,35 @@ export function timeConvert(n) {
   return rhours + "h " + rminutes + "m";
 }
 export const handleDate = (date) => {
-  if (!date) return '';
+  if (!date) return "";
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("DD/MM/YYYY");
 };
 export const handleDate2 = (date) => {
-  if(!date) return ' —';
+  if (!date) return " —";
   let dt = moment(date, "YYYY-MM-DD");
   return dt.format("YYYY");
 };
 
-
 export const genres = (item, type) => {
   return item.map((genre, index) => {
-    return <><Link className="genre" to={{
-      pathname: `/genre/${genre.id}-${urlSlug(genre.name, true)}/${type}`,
-      query: {
-        name: genre.name,
-      }
-    }}>{genre.name}</Link><>{(item.length - 1) !== index && ', \xa0'}</></>
-  })
+    return (
+      <>
+        <Link
+          className="genre"
+          to={{
+            pathname: `/genre/${genre.id}-${urlSlug(genre.name, true)}/${type}`,
+            query: {
+              name: genre.name,
+            },
+          }}
+        >
+          {genre.name}
+        </Link>
+        <>{item.length - 1 !== index && ", \xa0"}</>
+      </>
+    );
+  });
 };
 
 export function BootstrapTooltip(props) {

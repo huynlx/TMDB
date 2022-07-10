@@ -10,7 +10,7 @@ import chuyenDoiUrl from "../../../helpers/urlSlug";
 import { no_poster } from "../../../assets";
 import { options } from "../Slider";
 
-import NProgress from 'nprogress';
+import NProgress from "nprogress";
 
 const Index = (props) => {
   const root = document.documentElement;

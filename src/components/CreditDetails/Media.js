@@ -28,7 +28,7 @@ export const viewMore = () => {
   return (
     <Typography
       style={{
-        fontSize: "1.25rem",
+        fontSize: "1rem",
         width: "200px",
         textAlign: "center",
         fontWeight: "normal",

@@ -27,9 +27,10 @@ const MyProfile = (props) => {
     setLoading2(value);
   };
   const notify = _.debounce(
-    () => toast.success("😎 Update Profile Successfully!", {
-      theme: 'colored'
-    }),
+    () =>
+      toast.success("😎 Update Profile Successfully!", {
+        theme: "colored",
+      }),
     900
   );
   return (
@@ -66,8 +67,8 @@ const MyProfile = (props) => {
                   (errors.email.type === "required"
                     ? "Please enter your email"
                     : errors.email.type === "pattern"
-                      ? "Email is invalid"
-                      : null)
+                    ? "Email is invalid"
+                    : null)
                 }
               />
             }

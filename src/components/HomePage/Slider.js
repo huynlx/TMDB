@@ -19,7 +19,7 @@ import { makeStyles, Grid, Fade } from "@material-ui/core";
 import CustomDoughnut from "../Doughnut/CustomDoughnut";
 import { no_poster } from "../../assets";
 
-import NProgress from 'nprogress';
+import NProgress from "nprogress";
 
 const handleDate = (date) => {
   let dt = moment(date, "YYYY-MM-DD");

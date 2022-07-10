@@ -6,7 +6,11 @@ footer {
   width: 100vw;
   box-sizing: border-box;
   padding: 0;
-  background-image: radial-gradient(at 30% top, rgba(3, 29, 51, 1) 0%, rgba(3, 37, 65, 1) 70%);
+  background-image: radial-gradient(
+    at 30% top,
+    rgba(3, 29, 51, 1) 0%,
+    rgba(3, 37, 65, 1) 70%
+  );
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
